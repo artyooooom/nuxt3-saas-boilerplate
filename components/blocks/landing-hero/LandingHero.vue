@@ -1,11 +1,10 @@
 <script setup lang="ts">
-  import type { LandingHeroProps } from './types';
+  import { type LandingHeroProps } from './types';
 
   withDefaults(defineProps<LandingHeroProps>(), {
     header: 'No header provided in the attributes',
     description: 'No description provided in the attributes',
-    // @ts-ignore
-    image: { url: '/images/placeholder.png', alt: 'No alt text provided' }
+    image: () => ({ url: '/images/placeholder.png', alt: 'No alt text provided' })
   });
 </script>
 
@@ -19,7 +18,7 @@
         <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400">
           {{ description }}
         </p>
-        <div class="space-y-4 sm:flex sm:space-y-0 sm:space-x-4">
+        <div class="space-y-4 sm:flex sm:space-y-0 space-x-4">
           <Button v-for="(button, i) in buttons" :key="i" v-bind="button">{{ button.label }}</Button>
         </div>
       </div>
@@ -29,5 +28,6 @@
     </div>
   </section>
 </template>
+
 
 <style scoped></style>
