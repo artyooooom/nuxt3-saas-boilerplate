@@ -9,6 +9,11 @@ export type NavigationLinkProps = {
     isActive?: boolean;
 }
 
+export type ImageProps = {
+    url: string,
+    alt: string
+}
+
 export type LogoProps = {
     type: 'svg' | 'img';
     data: string;

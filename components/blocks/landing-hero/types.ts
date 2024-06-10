@@ -1,9 +1,4 @@
-import { type ButtonProps } from '../types';
-
-type ImageProps = {
-    url: string;
-    alt?: string;
-}
+import { type ButtonProps, type ImageProps } from '../types';
 
 export interface LandingHeroProps {
     header?: string;
