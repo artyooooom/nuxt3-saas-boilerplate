@@ -4,6 +4,14 @@ export interface ButtonProps extends Props {
     label: string;
 }
 
+export type TestimonialProps = {
+    name: string,
+    tag?: string,
+    content: string,  
+    img?: ImageProps,
+    avatar?: ImageProps,
+}
+
 export type NavigationLinkProps = {
     label: string;
     isActive?: boolean;
@@ -11,7 +19,7 @@ export type NavigationLinkProps = {
 
 export type ImageProps = {
     url: string,
-    alt: string
+    alt?: string
 }
 
 export type LogoProps = {
