@@ -4,7 +4,8 @@
     import LandingLogos from '@/components/blocks/landing-logos/LandingLogos.vue';
     import LandingSection from '@/components/blocks/landing-section/LandingSection.vue';
     import LandingTestimonials from '@/components/blocks/landing-testimonials/LandingTestimonials.vue';
-    import { type ButtonProps, type LogoProps, type TestimonialProps } from '@/components/blocks/types';
+    import LandingQuote from '@/components/blocks/landing-quote/LandingQuote.vue';
+    import { type ButtonProps, type LogoProps, type TestimonialProps, type ImageProps } from '@/components/blocks/types';
 
     definePageMeta({
         layout: 'default'
@@ -35,54 +36,60 @@
     const features: string[] = ['Continuous integration and deployment', 'Development workflow', 'Knowledge management']
 
     const testimonials: TestimonialProps[] = [{
-        name: 'Customer #1',
-        content: "Yo Marc, I got the boilerplate, <span>it's fantastic man you just</span> save me 10 hours on each project",
-        tag: '@customer1'
-    },
-    {
-        name: 'Customer #1',
-        content: `Getting shipfa.st from @marc_louvion is one of the best decision I've made since I started indie hacking.<br><br>
-It helped me actually getting started instead of procrastinating and it made me release snowball.club so much faster than if I tried without it.<br><br>
-Oh and the included access to the community of builders is so underrated 🔥`,
-        tag: '@customer1',
-        avatar: {
-            url: '/images/avatar.jpeg'
+            name: 'Customer #1',
+            content: "Yo Marc, I got the boilerplate, <span>it's fantastic man you just</span> save me 10 hours on each project",
+            tag: '@customer1'
+        },
+        {
+            name: 'Customer #1',
+            content: `Getting shipfa.st from @marc_louvion is one of the best decision I've made since I started indie hacking.<br><br>
+    It helped me actually getting started instead of procrastinating and it made me release snowball.club so much faster than if I tried without it.<br><br>
+    Oh and the included access to the community of builders is so underrated 🔥`,
+            tag: '@customer1',
+            avatar: {
+                url: '/images/avatar.jpeg'
+            }
+        },
+        {
+            name: 'Alejandro Possima',
+            content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This <span>will save me like a week of work</span> for each new side project I spin up. I appreciate that is well documented, as well.`,
+            tag: '@customer1'
+        },
+        {
+            name: 'Customer #1',
+            content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
+            tag: '@customer1'
+        },
+        {
+            name: 'Customer #1',
+            content: "I managed to exit & sell for 5 figures in a few weeks. <span>Best investment I've made in so long.</span>",
+            tag: '@customer1'
+        },
+        {
+            name: 'Customer #1',
+            content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
+            tag: '@customer1'
+        },
+        {
+            name: 'Customer #1',
+            content: "I managed to exit & sell for 5 figures in a few weeks. Best investment I've made in so long.",
+            tag: '@customer1'
+        },
+        {
+            name: 'Customer #1',
+            content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
+            tag: '@customer1',
+            img: {
+                url: '/images/stats.webp',
+            }
         }
-    },
-    {
-        name: 'Alejandro Possima',
-        content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This <span>will save me like a week of work</span> for each new side project I spin up. I appreciate that is well documented, as well.`,
-        tag: '@customer1'
-    },
-    {
-        name: 'Customer #1',
-        content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
-        tag: '@customer1'
-    },
-    {
-        name: 'Customer #1',
-        content: "I managed to exit & sell for 5 figures in a few weeks. <span>Best investment I've made in so long.</span>",
-        tag: '@customer1'
-    },
-    {
-        name: 'Customer #1',
-        content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
-        tag: '@customer1'
-    },
-    {
-        name: 'Customer #1',
-        content: "I managed to exit & sell for 5 figures in a few weeks. Best investment I've made in so long.",
-        tag: '@customer1'
-    },
-    {
-        name: 'Customer #1',
-        content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
-        tag: '@customer1',
-        img: {
-            url: '/images/stats.webp',
-        }
-    },
-]
+    ]
+
+    const avatar: ImageProps = {
+        url: '/images/avatar.jpeg',
+        alt: 'Micheal Gough'
+    }
+
     
 </script>
 
@@ -98,6 +105,7 @@ Oh and the included access to the community of builders is so underrated 🔥`,
         
         <LandingTestimonials :testimonials="testimonials"/>
         
+        <LandingQuote :avatar="avatar" content="Landwind is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application." author="Micheal Gough" aside-info="CEO at Google"/>
         <!-- <Button variant="destructive">Example</Button> -->
     </div>
 
