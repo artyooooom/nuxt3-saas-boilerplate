@@ -5,7 +5,8 @@
     import LandingSection from '@/components/blocks/landing-section/LandingSection.vue';
     import LandingTestimonials from '@/components/blocks/landing-testimonials/LandingTestimonials.vue';
     import LandingQuote from '@/components/blocks/landing-quote/LandingQuote.vue';
-    import { type ButtonProps, type LogoProps, type TestimonialProps, type ImageProps } from '@/components/blocks/types';
+    import LandingFAQ from '@/components/blocks/landing-faq/LandingFAQ.vue';
+    import { type ButtonProps, type LogoProps, type TestimonialProps, type AccordionItemProps, type ImageProps } from '@/components/blocks/types';
 
     definePageMeta({
         layout: 'default'
@@ -90,6 +91,12 @@
         alt: 'Micheal Gough'
     }
 
+
+    const accordionItems: AccordionItemProps[] = [
+        { value: 'item-1', title: 'Is it accessible?', content: 'Yes. It adheres to the WAI-ARIA design pattern.' },
+        { value: 'item-2', title: 'Is it unstyled?', content: 'Yes. It\'s unstyled by default, giving you freedom over the look and feel.' },
+        { value: 'item-3', title: 'Can it be animated?', content: 'Yes! You can use the transition prop to configure the animation.' },
+    ]
     
 </script>
 
@@ -106,6 +113,8 @@
         <LandingTestimonials :testimonials="testimonials"/>
         
         <LandingQuote :avatar="avatar" content="Landwind is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application." author="Micheal Gough" aside-info="CEO at Google"/>
+        
+        <LandingFAQ :accordion-items="accordionItems" heading="Frequently asked questions" subheading="Here at Landwind we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth."/>
         <!-- <Button variant="destructive">Example</Button> -->
     </div>
 

@@ -6,5 +6,6 @@ export interface LandingSectionProps {
     features?: string[];
     image?: ImageProps;
     buttons?: ButtonProps[];
-    align: 'left' | 'center' | 'right'
+    filled?: boolean;
+    align: 'left' | 'center' | 'right';
 }

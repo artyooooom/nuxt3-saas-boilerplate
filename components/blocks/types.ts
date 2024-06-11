@@ -4,6 +4,12 @@ export interface ButtonProps extends Props {
     label: string;
 }
 
+export type AccordionItemProps = {
+    value: string,
+    title: string,
+    content: string
+}
+
 export type TestimonialProps = {
     name: string,
     tag?: string,
