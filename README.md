@@ -2,6 +2,10 @@
 The Nuxt 3 blocks with all you need to build your SaaS or any other web app landing page. Using shadcn-nuxt & tailwindcss.
 
 [See Demo](/)
+[Documentation](/)
+[Template]()
+
+---
 
 ## Available Blocks
 * LandingHeader
@@ -14,9 +18,6 @@ The Nuxt 3 blocks with all you need to build your SaaS or any other web app land
 * LandingSection
 * LandingTestimonials
 * LandingFooter
-
-## Template
-Explore sample template of a landing page built using our blocks [here](/)
 
 ## Setup
 
