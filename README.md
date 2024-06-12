@@ -1,71 +1,39 @@
-# Nuxt 3 SAAS Boilerplate 
+# Nuxt 3 SAAS Landing Builder 
+The Nuxt 3 blocks with all you need to build your SaaS or any other web app landing page. Using shadcn-nuxt & tailwindcss.
+
+[See Demo](/)
+
+## Available Blocks
+* LandingHeader
+* LandingCTA
+* LandingFAQ
+* LandingHero
+* LandingLogos
+* LandingPricings
+* LandingQuote
+* LandingSection
+* LandingTestimonials
+* LandingFooter
+
+## Template
+Explore sample template of a landing page built using our blocks [here](/)
 
 ## Setup
 
-Make sure to install the dependencies:
-
 ```bash
-# npm
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
 ## Development Server
-
 Start the development server on `http://localhost:3000`:
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
-
 ## Production
 
 Build the application for production:
 
 ```bash
-# npm
 npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
