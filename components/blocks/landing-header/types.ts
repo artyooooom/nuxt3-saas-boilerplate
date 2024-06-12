@@ -1,9 +1,9 @@
-import { type ButtonProps, type NavigationLinkProps } from '../types';
+import { type ButtonProps, type LinkProps } from '../types';
 
 
 export default interface LandingHeaderProps {
     appName: string;
     appLogo?: string;
-    links: NavigationLinkProps[];
+    links: LinkProps[];
     buttons?: ButtonProps[];
 }
