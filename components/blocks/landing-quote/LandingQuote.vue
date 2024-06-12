@@ -37,7 +37,7 @@
                     <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">"{{ content }}"</p>
                 </blockquote>
                 <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                    <Avatar class="hidden rounded-full h-10 w-10 sm:flex bg-white">
+                    <Avatar class="rounded-full h-10 w-10 bg-white">
                         <AvatarImage v-if="avatar" :src="avatar.url" :alt="avatar.alt" />
                         <AvatarFallback>{{ shortName }}</AvatarFallback>
                     </Avatar>

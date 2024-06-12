@@ -6,7 +6,9 @@
     import LandingTestimonials from '@/components/blocks/landing-testimonials/LandingTestimonials.vue';
     import LandingQuote from '@/components/blocks/landing-quote/LandingQuote.vue';
     import LandingFAQ from '@/components/blocks/landing-faq/LandingFAQ.vue';
-    import { type ButtonProps, type LogoProps, type TestimonialProps, type AccordionItemProps, type ImageProps } from '@/components/blocks/types';
+    import LandingCTA from '@/components/blocks/landing-cta/LandingCTA.vue';
+    import LandingPricings from '@/components/blocks/landing-pricings/LandingPricings.vue';
+    import { type ButtonProps, type LogoProps, type TestimonialProps, type PricingPlanProps, type AccordionItemProps, type ImageProps } from '@/components/blocks/types';
 
     definePageMeta({
         layout: 'default'
@@ -98,6 +100,15 @@
         { value: 'item-3', title: 'Can it be animated?', content: 'Yes! You can use the transition prop to configure the animation.' },
     ]
     
+    const pricingPlans: PricingPlanProps[] = [{
+        heading: 'Starter',
+        subheading: 'Best option for personal use & for your next project.',
+        pricing: '$29',
+        period: 'year',
+        features: ['Individual configuration', 'No setup, or hidden fees', 'Team size: 1 developer', 'Premium support: 6 months', 'Free updates: 6 months'],
+        action: 'Get started'
+    }, ]
+    
 </script>
 
 <template>
@@ -115,6 +126,10 @@
         <LandingQuote :avatar="avatar" content="Landwind is just awesome. It contains tons of predesigned components and pages starting from login screen to complex dashboard. Perfect choice for your next SaaS application." author="Micheal Gough" aside-info="CEO at Google"/>
         
         <LandingFAQ :accordion-items="accordionItems" heading="Frequently asked questions" subheading="Here at Landwind we focus on markets where technology, innovation, and capital can unlock long-term value and drive economic growth."/>
+
+        <LandingCTA heading="Start your free trial today" subheading="Try Landwind Platform for 30 days. No credit card required." :action-buttons="buttonsData"/>
+        
+        <LandingPricings :pricing-plans="pricingPlans" />
         <!-- <Button variant="destructive">Example</Button> -->
     </div>
 

@@ -26,10 +26,10 @@
 <template>
     <section class="py-8">
         <div class="max-w-screen-xl w-full mx-auto md:columns-2 lg:columns-3 xl:columns-3 space-y-3 md:space-y-6 md:gap-6">
-            <div class="break-inside-avoid max-md:flex justify-center p-5 bg-gray-50 rounded-lg h-min" v-for="(testimonial, i) in testimonials" :key="i">
+            <div class="break-inside-avoid justify-center p-5 bg-gray-50 rounded-lg h-min" v-for="(testimonial, i) in testimonials" :key="i">
                 <div class="flex items-center gap-4">
 
-                    <Avatar class="hidden rounded-full h-10 w-10 sm:flex bg-white">
+                    <Avatar class="rounded-full h-10 w-10 bg-white">
                         <AvatarImage v-if="testimonial.avatar" :src="testimonial.avatar.url" :alt="testimonial.avatar.alt" />
                         <AvatarFallback>{{ shortName(testimonial.name) }}</AvatarFallback>
                     </Avatar>
