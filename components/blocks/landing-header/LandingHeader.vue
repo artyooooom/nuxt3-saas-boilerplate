@@ -31,7 +31,9 @@
                     </ul>
                 </div>
                 <div class="flex items-center lg:order-2 space-x-4">
-                    <Button v-for="(button, i) in buttons" :key="i" v-bind="button">{{ button.label }}</Button>
+                    <a v-for="(button, i) in buttons" :key="i" :target="button.link?.target" :href="button.link?.url">
+                        <Button v-bind="button">{{ button.label }}</Button>
+                    </a>
                     <!-- <a href="https://themesberg.com/product/tailwind-css/landing-page" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Download</a> -->
                     <button data-collapse-toggle="mobile-menu-2" type="button" class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="mobile-menu-2" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>

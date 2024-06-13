@@ -19,7 +19,9 @@
           {{ description }}
         </p>
         <div class="space-y-4 sm:flex sm:space-y-0 space-x-4">
-          <Button v-for="(button, i) in buttons" :key="i" v-bind="button">{{ button.label }}</Button>
+          <a v-for="(button, i) in buttons" :key="i" :href="button.link?.url">
+            <Button v-bind="button">{{ button.label }}</Button>
+          </a>
         </div>
       </div>
       <div class="hidden lg:mt-0 lg:col-span-5 lg:flex">

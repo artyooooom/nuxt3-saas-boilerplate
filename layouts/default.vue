@@ -15,7 +15,11 @@
   }]
 
   const buttonsData: ButtonProps[] = [{
-    label: 'Example',
+    label: 'Auth',
+    link: {
+        url: '/auth',
+        target: '_blank'
+    },
     variant: 'destructive'
   }, {
     label: 'Example',

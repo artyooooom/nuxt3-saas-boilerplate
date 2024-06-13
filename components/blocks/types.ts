@@ -1,7 +1,11 @@
 import { type Props } from '../ui/button/Button.vue';
 
 export interface ButtonProps extends Props {
-    label: string;
+    label: string,
+    link?: {
+        url: string,
+        target?: '_blank'
+    }
 }
 
 export type AccordionItemProps = {

@@ -31,7 +31,9 @@
                             <span class="text-base font-medium leading-tight text-gray-900 dark:text-white">{{ feature }}</span>
                         </li>
                     </ul>
-                    <Button v-for="(button, i) in buttons" :key="i" v-bind="button" class="mr-4">{{ button.label }}</Button>
+                    <a v-for="(button, i) in buttons" :key="i" :href="button.link?.url">
+                        <Button v-bind="button">{{ button.label }}</Button>
+                    </a>
                 </div>
                 <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" :class="imageOrderNo" :src="image.url" :alt="image.alt">
             </div>
