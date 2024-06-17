@@ -1,6 +1,6 @@
 import { type LinkProps, type FooterSocialsProps } from '../types'
 
-export interface LandingFooterProps {
+export interface FooterProps {
     appName: string,
     appLogo?: string | null
     subheading?: string,

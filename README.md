@@ -8,16 +8,16 @@ The Nuxt 3 blocks with all you need to build your SaaS or any other web app land
 ---
 
 ## Available Blocks
-* LandingHeader
-* LandingCTA
-* LandingFAQ
+* Header
 * LandingHero
 * LandingLogos
-* LandingPricings
-* LandingQuote
+* LandingCTA
 * LandingSection
+* LandingQuote
 * LandingTestimonials
-* LandingFooter
+* LandingPricings
+* LandingFAQ
+* Footer
 
 ## Setup
 

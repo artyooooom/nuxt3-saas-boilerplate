@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-  import LandingHeader from '@/components/blocks/landing-header/LandingHeader.vue';
-  import LandingFooter from '@/components/blocks/landing-footer/LandingFooter.vue';
+  import Header from '~/components/blocks/header/Header.vue';
+  import Footer from '~/components/blocks/footer/Footer.vue';
   import { type ButtonProps, type FooterSocialsProps, type LinkProps } from '@/components/blocks/types';
 
   const appConfig = useAppConfig()
@@ -141,9 +141,9 @@
 
 <template>
   <div>
-    <LandingHeader v-bind="appConfig" :links="linksData" :buttons="buttonsData"/>
+    <Header v-bind="appConfig" :links="linksData" :buttons="buttonsData"/>
     <slot />
-    <LandingFooter v-bind="appConfig" :sections="footerSections" subheading="© 2021-2022 Landwind™. All Rights Reserved. Built with Flowbite and Tailwind CSS." :socials="socials"/>
+    <Footer v-bind="appConfig" :sections="footerSections" subheading="© 2021-2022 Landwind™. All Rights Reserved. Built with Flowbite and Tailwind CSS." :socials="socials"/>
   </div>
 </template>
 

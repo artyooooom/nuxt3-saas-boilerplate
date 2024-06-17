@@ -1,7 +1,7 @@
 <script setup lang="ts">
-    import { type LandingFooterProps } from './types';
+    import { type FooterProps } from './types';
 
-    const props = defineProps<LandingFooterProps>()
+    const props = defineProps<FooterProps>()
 
 
     const gridColsClass = computed(() => {
