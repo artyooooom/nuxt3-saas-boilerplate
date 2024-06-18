@@ -1,11 +1,11 @@
 import { type ButtonProps, type ImageProps } from "../types";
 
 export interface LandingSectionProps {
-    header: string;
+    header?: string;
     description?: string;
     features?: string[];
     image?: ImageProps;
     buttons?: ButtonProps[];
     filled?: boolean;
-    align: 'left' | 'center' | 'right';
+    align?: 'left' | 'center' | 'right';
 }
