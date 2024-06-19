@@ -14,12 +14,16 @@ export type AccordionItemProps = {
     content: string
 }
 
-export type TestimonialProps = {
+export type PersonProps = {
     name: string,
-    tag?: string,
+    description?: string,
+    avatar?: ImageProps
+}
+
+export type TestimonialProps = {
+    person: PersonProps,
     content: string,  
-    img?: ImageProps,
-    avatar?: ImageProps,
+    image?: ImageProps,
 }
 
 export type PricingPlanProps = {

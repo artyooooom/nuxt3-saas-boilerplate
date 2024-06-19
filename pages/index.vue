@@ -1,13 +1,13 @@
 
 <script setup lang="ts">
-    import LandingHero from '@/components/blocks/landing-hero/LandingHero.vue';
-    import LandingLogos from '@/components/blocks/landing-logos/LandingLogos.vue';
-    import LandingSection from '@/components/blocks/landing-section/LandingSection.vue';
-    import LandingTestimonials from '@/components/blocks/landing-testimonials/LandingTestimonials.vue';
-    import LandingQuote from '@/components/blocks/landing-quote/LandingQuote.vue';
-    import LandingFAQ from '@/components/blocks/landing-faq/LandingFAQ.vue';
-    import LandingCTA from '@/components/blocks/landing-cta/LandingCTA.vue';
-    import LandingPricings from '@/components/blocks/landing-pricings/LandingPricings.vue';
+    import LandingHero from '@/components/blocks/landing/landing-hero/LandingHero.vue';
+    import LandingLogos from '@/components/blocks/landing/landing-logos/LandingLogos.vue';
+    import LandingSection from '@/components/blocks/landing/landing-section/LandingSection.vue';
+    import LandingTestimonials from '@/components/blocks/landing/landing-testimonials/LandingTestimonials.vue';
+    import LandingQuote from '@/components/blocks/landing/landing-quote/LandingQuote.vue';
+    import LandingFAQ from '@/components/blocks/landing/landing-faq/LandingFAQ.vue';
+    import LandingCTA from '@/components/blocks/landing/landing-cta/LandingCTA.vue';
+    import LandingPricings from '@/components/blocks/landing/landing-pricings/LandingPricings.vue';
     import { type ButtonProps, type LogoProps, type TestimonialProps, type PricingPlanProps, type AccordionItemProps, type ImageProps } from '@/components/blocks/types';
 
     definePageMeta({
@@ -39,52 +39,68 @@
     const features: string[] = ['Continuous integration and deployment', 'Development workflow', 'Knowledge management']
 
     const testimonials: TestimonialProps[] = [{
-            name: 'Customer #1',
+            person: {
+                name: 'Customer #1',
+                description: '@customer1'
+            },
             content: "Yo Marc, I got the boilerplate, <span>it's fantastic man you just</span> save me 10 hours on each project",
-            tag: '@customer1'
         },
         {
-            name: 'Customer #1',
+            person: {
+                name: 'Customer #1',
+                description: '@customer1',
+                avatar: {
+                    url: '/images/avatar.jpeg'
+                }
+            },
             content: `Getting shipfa.st from @marc_louvion is one of the best decision I've made since I started indie hacking.<br><br>
     It helped me actually getting started instead of procrastinating and it made me release snowball.club so much faster than if I tried without it.<br><br>
     Oh and the included access to the community of builders is so underrated 🔥`,
-            tag: '@customer1',
-            avatar: {
-                url: '/images/avatar.jpeg'
-            }
         },
         {
-            name: 'Alejandro Possima',
+            person: {
+                name: 'Customer #1',
+                description: '@customer1'
+            },
             content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This <span>will save me like a week of work</span> for each new side project I spin up. I appreciate that is well documented, as well.`,
-            tag: '@customer1'
         },
         {
-            name: 'Customer #1',
+            person: {
+                name: 'Customer #1',
+                description: '@customer1'
+            },
             content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
-            tag: '@customer1'
         },
         {
-            name: 'Customer #1',
+            person: {
+                name: 'Customer #1',
+                description: '@customer1'
+            },
             content: "I managed to exit & sell for 5 figures in a few weeks. <span>Best investment I've made in so long.</span>",
-            tag: '@customer1'
         },
         {
-            name: 'Customer #1',
+            person: {
+                name: 'Customer #1',
+                description: '@customer1'
+            },
             content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
-            tag: '@customer1'
         },
         {
-            name: 'Customer #1',
+            person: {
+                name: 'Customer #1',
+                description: '@customer1'
+            },
             content: "I managed to exit & sell for 5 figures in a few weeks. Best investment I've made in so long.",
-            tag: '@customer1'
         },
         {
-            name: 'Customer #1',
-            content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
-            tag: '@customer1',
-            img: {
+            person: {
+                name: 'Customer #1',
+                description: '@customer1',
+            },
+            image: {
                 url: '/images/stats.webp',
-            }
+            },
+            content: `Marc, I got your boilerplate and having the payments setup with Stripe + user auth is a blessing. This will save me like a week of work for each new side project I spin up. I appreciate that is well documented, as well.`,
         }
     ]
 
@@ -115,7 +131,7 @@
 
     <div>
         
-        <LandingHero :buttons="buttonsData"/>
+        <LandingHero :buttons="buttonsData" />
         
         <LandingLogos :logos="companiesLogos"/>
         

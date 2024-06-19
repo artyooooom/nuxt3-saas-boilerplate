@@ -12,6 +12,9 @@
   }, {
     label: 'Features',
     url: '/features'
+  }, {
+    label: 'Blog',
+    url: '/blog/'
   }]
 
   const buttonsData: ButtonProps[] = [{
