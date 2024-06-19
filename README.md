@@ -1,13 +1,23 @@
-# Nuxt 3 SAAS Landing Builder 
-The Nuxt 3 blocks with all you need to build your SaaS or any other web app landing page. Using shadcn-nuxt & tailwindcss.
+# Nuxt 3 SAAS Boilerplate 
+The Nuxt 3 boilerplate with all you need to build your SaaS or any other web app landing page. Using shadcn-nuxt & tailwindcss.
 
-[See Demo](/)
+[See Demo](/) \
 [Documentation](/)
-[Template]()
 
----
+## To-do List
+
+- [ ] Write comments on where actions required (*i.e. setting up article data in blog/article-example-page.vue)
+- [ ] Rewrite the README
+- [ ] Write a documentation / make an explanation video
+- [ ] Authentication via Supabase
+- [ ] Make a simple dashboard with ability to connect external APIs
+- [ ] SEO optimization of the website
+- [ ] Create a demo
+- [x] Blog
+- [x] Landing blocks
 
 ## Available Blocks
+
 * Header
 * LandingHero
 * LandingLogos
