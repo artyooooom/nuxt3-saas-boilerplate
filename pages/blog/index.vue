@@ -18,6 +18,13 @@
                 ranging from gentrification to pop culture.`,
             image: {
                 url: '/images/bg.jpeg'
+            },
+            author: {
+                name: 'Big L',
+                description: "December 23, 2023",
+                avatar: {
+                    url: '/images/avatar.jpeg'
+                }
             }
         },
     ]

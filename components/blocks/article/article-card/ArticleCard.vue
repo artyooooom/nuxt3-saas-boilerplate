@@ -5,14 +5,6 @@
     withDefaults(defineProps<ArticleCardProps>(), {
         image: () => ({ url: '/images/placeholder.png', alt: 'No alt text provided' }),
     })
-
-    const person = {
-        name: 'Big L',
-        description: "December 23, 2023",
-        avatar: {
-            url: '/images/avatar.jpeg'
-        }
-    }
 </script>
 
 <template>
@@ -29,7 +21,7 @@
             
     
             <div class="my-5">
-                <PersonCard v-bind="person"/>
+                <PersonCard v-bind="author"/>
             </div>
             
         </div>
