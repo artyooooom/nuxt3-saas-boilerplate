@@ -1,33 +1,11 @@
 <script setup lang="ts">
 
     import ArticleCard from '~/components/blocks/article/article-card/ArticleCard.vue';
-    
+    import { articles } from '@/data/articles'
     definePageMeta({
         layout: 'default'
     })
 
-
-    // here set up your articles that should be showing on "All Articles" page
-    const articles = [
-        {
-            url: '/blog/article-example-page',
-            heading: "What's the purpose of having a blog for your SAAS?",
-            description: `Daniel Day, widely known as Dapper Dan, was born in Harlem, New York, in 1944. Described as a "natural
-                born hustler," Dan's diverse passions spanned fashion, journalism, and gambling. In the late 1960s, Dan
-                worked for the Harlem-based newspaper Forty Acres and a Mule, where he wrote commentaries on topics
-                ranging from gentrification to pop culture.`,
-            image: {
-                url: '/images/bg.jpeg'
-            },
-            author: {
-                name: 'Big L',
-                description: "December 23, 2023",
-                avatar: {
-                    url: '/images/avatar.jpeg'
-                }
-            }
-        },
-    ]
 
 </script>
 

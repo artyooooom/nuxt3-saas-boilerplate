@@ -4,6 +4,6 @@ export interface ArticleCardProps {
     url: string
     heading: string,
     description?: string,
-    author?: PersonProps,
+    person?: PersonProps,
     image?: ImageProps,
 }

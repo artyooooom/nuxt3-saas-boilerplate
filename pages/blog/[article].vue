@@ -1,33 +1,28 @@
 <script setup lang="ts">
-    import ArticleContent from '~/components/blocks/article/article-content/ArticleContent.vue'
+    import ArticleContent from '@/components/blocks/article/article-content/ArticleContent.vue'
+    import notFound from '~/components/blocks/404/notFound.vue'
+    import { articleValidation } from '@/middleware/articleValidation'
+    import { articles } from '@/data/articles'
 
+    const articleId = useRoute().params.article
+
+    const article = articles.find((article) => {
+        return article.url === articleId
+    })    
+    
     definePageMeta({
-        layout: 'default'
+        layout: 'default',
+        middleware: [articleValidation]
     })
 
     const { appName } = useAppConfig()
-
-
-    // Here set up article's data
-    const heading = "What's the purpose of having a blog for your SAAS?"
-
-    const image = {
-        url: '/images/bg.jpeg'
-    }
-    const person = {
-        name: 'Big L',
-        description: 'December 23, 2023',
-        avatar: {
-            url: '/images/avatar.jpeg'
-        }
-    }
 
 </script>
 
 <template>
     <article class="pt-32 max-w-3xl mx-auto px-4">
 
-        <Breadcrumb class="mb-4">
+        <Breadcrumb v-if="article" class="mb-4">
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink as-child>
@@ -51,7 +46,7 @@
 
         <div class="max-w-screen-lg mx-auto article-contents mb-8">
 
-            <ArticleContent :heading="heading" :image="image" :author="person">
+            <ArticleContent v-if="article" v-bind="article">
                 <!-- Here insert article's content -->
                 <h2 class="mt-12 mb-3 text-2xl font-bold leading-none tracking-tight">Early Life and the Birth of Dapper
                     Dan's Vision</h2>
@@ -124,6 +119,7 @@
                 </p>
             </ArticleContent>
 
+            <notFound v-else/>
         </div>
     </article>
 </template>

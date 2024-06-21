@@ -9,7 +9,7 @@
 
 <template>
     
-    <a :href="url" target="_blank">
+    <a :href="'/blog/' + url" target="_blank">
         
         <img class="h-auto rounded-t-lg max-h-36 w-full overflow-hidden object-cover" v-if="image" :src="image.url" :alt="image.alt">
 
@@ -21,7 +21,7 @@
             
     
             <div class="my-5">
-                <PersonCard v-bind="author"/>
+                <PersonCard v-bind="person"/>
             </div>
             
         </div>

@@ -8,11 +8,11 @@
 <template>
 
     <!-- article heading -->
-    <h1 class="mx-auto text-5xl text-black font-extrabold leading-none tracking-tight">What's the purpose of having a blog for your SAAS?</h1>
+    <h1 class="mx-auto text-5xl text-black font-extrabold leading-none tracking-tight">{{ heading }}</h1>
     
     <!-- article author & metadata -->
     <div class="my-6">
-        <PersonCard v-bind="author"/>
+        <PersonCard v-bind="person"/>
     </div>
 
     <!-- article cover image -->
