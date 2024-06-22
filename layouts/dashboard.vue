@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import SidebarNav from '@/components/blocks/dashboard/DashboardSidebarNav.vue'
-    import Header from '~/components/blocks/header/Header.vue';
-    import Footer from '~/components/blocks/footer/Footer.vue';
+    import Header from '@/components/blocks/header/Header.vue';
+    import Footer from '@/components/blocks/footer/Footer.vue';
     import { linksData, buttonsData } from '@/data/header'
     import { footerSections, socials } from '@/data/footer' 
     import { sidebarNavItems } from '@/data/dashboard-sidenav' 

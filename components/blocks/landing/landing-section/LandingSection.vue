@@ -2,7 +2,7 @@
     import { type LandingSectionProps } from './types';
 
     const props = withDefaults(defineProps<LandingSectionProps>(), {
-        header: 'No header provided in the attributes',
+        heading: 'No heading provided in the attributes',
         align: 'left',
         filled: false,
         image: () => ({ url: '/images/placeholder.png', alt: 'No alt text provided' })
@@ -23,7 +23,7 @@
         <div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
             <div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
                 <div class="text-gray-500 sm:text-lg dark:text-gray-400" :class="textContentOrderNo">
-                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ header }}</h2>
+                    <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ heading }}</h2>
                     <p v-if="description" class="mb-8 font-light lg:text-xl">{{ description }}</p>
                     <ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7 dark:border-gray-700">
                         <li class="flex space-x-3" v-for="feature in features" :key="feature">
@@ -33,7 +33,7 @@
                     </ul>
                     <div class="space-y-4 sm:flex sm:space-y-0 space-x-4">
                         <a v-for="(button, i) in buttons" :key="i" :href="button.link?.url">
-                            <Button v-bind="button">{{ button.label }}</Button>
+                            <Button v-bind="button">{{ button.title }}</Button>
                         </a>
                     </div>
                 </div>

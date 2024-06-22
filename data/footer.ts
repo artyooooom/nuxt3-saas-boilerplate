@@ -4,19 +4,19 @@ export const footerSections = [{
     heading: 'Company',
     links: [
         {
-            label: 'About',
+            title: 'About',
             url: '/about',
         },
         {
-            label: 'Careers',
+            title: 'Careers',
             url: '/careers',
         },
         {
-            label: 'Brand Center',
+            title: 'Brand Center',
             url: '/brand-center',
         },
         {
-            label: 'Blog',
+            title: 'Blog',
             url: '/blog',
         },
     ]
@@ -24,19 +24,19 @@ export const footerSections = [{
     heading: 'Help Center',
     links: [
         {
-            label: 'Discord',
+            title: 'Discord',
             url: '/discord',
         },
         {
-            label: 'Twitter',
+            title: 'Twitter',
             url: '/twitter',
         },
         {
-            label: 'Facebook',
+            title: 'Facebook',
             url: '/facebook',
         },
         {
-            label: 'Blog',
+            title: 'Blog',
             url: '/blog',
         },
     ]
@@ -44,19 +44,19 @@ export const footerSections = [{
     heading: 'Company',
     links: [
         {
-            label: 'About',
+            title: 'About',
             url: '/about',
         },
         {
-            label: 'Careers',
+            title: 'Careers',
             url: '/careers',
         },
         {
-            label: 'Brand Center',
+            title: 'Brand Center',
             url: '/brand-center',
         },
         {
-            label: 'Blog',
+            title: 'Blog',
             url: '/blog',
         },
     ]
@@ -64,19 +64,19 @@ export const footerSections = [{
     heading: 'Help Center',
     links: [
         {
-            label: 'Discord',
+            title: 'Discord',
             url: '/discord',
         },
         {
-            label: 'Twitter',
+            title: 'Twitter',
             url: '/twitter',
         },
         {
-            label: 'Facebook',
+            title: 'Facebook',
             url: '/facebook',
         },
         {
-            label: 'Blog',
+            title: 'Blog',
             url: '/blog',
         },
     ]
@@ -84,19 +84,19 @@ export const footerSections = [{
     heading: 'Company',
     links: [
         {
-            label: 'About',
+            title: 'About',
             url: '/about',
         },
         {
-            label: 'Careers',
+            title: 'Careers',
             url: '/careers',
         },
         {
-            label: 'Brand Center',
+            title: 'Brand Center',
             url: '/brand-center',
         },
         {
-            label: 'Blog',
+            title: 'Blog',
             url: '/blog',
         },
     ]

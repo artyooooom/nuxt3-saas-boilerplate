@@ -19,7 +19,7 @@
                     <h3 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">{{ section.heading }}</h3>
                     <ul class="text-gray-500 dark:text-gray-400">
                         <li class="mb-4" v-for="link in section.links">
-                            <a :href="link.url" class="hover:underline">{{ link.label }}</a>
+                            <a :href="link.url" class="hover:underline">{{ link.title }}</a>
                         </li>
                     </ul>
                 </div>

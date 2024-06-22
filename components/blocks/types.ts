@@ -1,7 +1,7 @@
 import { type Props } from '../ui/button/Button.vue';
 
 export interface ButtonProps extends Props {
-    label: string,
+    title: string,
     link?: {
         url: string,
         target?: '_blank'
@@ -36,7 +36,7 @@ export type PricingPlanProps = {
 }
 
 export type LinkProps = {
-    label: string;
+    title: string;
     url: string;
     isActive?: boolean;
 }

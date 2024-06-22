@@ -1,25 +1,25 @@
 import { type ButtonProps, type LinkProps } from '@/components/blocks/types';
 
 export const linksData: LinkProps[] = [{
-    label: 'Pricings',
+    title: 'Pricings',
     url: '/pricings',
     isActive: true
 }, {
-    label: 'Features',
+    title: 'Features',
     url: '/features'
 }, {
-    label: 'Blog',
+    title: 'Blog',
     url: '/blog/'
 }]
 
 export const buttonsData: ButtonProps[] = [{
-    label: 'Auth',
+    title: 'Auth',
     link: {
         url: '/auth',
         target: '_blank'
     },
     variant: 'destructive'
 }, {
-    label: 'Example',
+    title: 'Example',
     variant: 'outline'
 }]

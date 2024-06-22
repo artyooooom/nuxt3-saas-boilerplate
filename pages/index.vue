@@ -14,10 +14,10 @@ definePageMeta({
 });
 
 const buttonsData: ButtonProps[] = [{
-    label: 'Example',
+    title: 'Example',
     variant: 'destructive'
 }, {
-    label: 'Example',
+    title: 'Example',
     variant: 'outline'
 }]
 

@@ -1,8 +1,14 @@
 import { type ButtonProps, type ImageProps } from '@/components/blocks/types';
 
 export interface LandingHeroProps {
-    header?: string;
-    description?: string;
+    heading?: {
+        title: string;
+        styling?: number
+    }
+    description?: { 
+        title: string;
+        styling?: number
+    }
     image?: ImageProps;
     buttons?: ButtonProps[];
     alreadyUsing?: {
