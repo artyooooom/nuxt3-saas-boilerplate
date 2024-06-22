@@ -1,4 +1,4 @@
-import { type ButtonProps, type ImageProps } from "../types";
+import { type ButtonProps, type ImageProps } from "@/components/blocks/types";
 
 export interface LandingSectionProps {
     header?: string;
