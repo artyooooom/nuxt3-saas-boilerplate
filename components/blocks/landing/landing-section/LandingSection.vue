@@ -37,7 +37,7 @@
                         </a>
                     </div>
                 </div>
-                <img class="hidden w-full mb-4 rounded-lg lg:mb-0 lg:flex" :class="imageOrderNo" :src="image.url" :alt="image.alt">
+                <img class="hidden w-full mb-4 lg:mb-0 lg:flex" :class="imageOrderNo" :src="image.url" :alt="image.alt">
             </div>
         </div>
     </section>

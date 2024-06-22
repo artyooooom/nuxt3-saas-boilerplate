@@ -12,6 +12,7 @@ export const linksData: LinkProps[] = [{
     url: '/blog/'
 }]
 
+
 export const buttonsData: ButtonProps[] = [{
     title: 'Auth',
     link: {
@@ -23,3 +24,8 @@ export const buttonsData: ButtonProps[] = [{
     title: 'Example',
     variant: 'outline'
 }]
+
+export const announcement = {
+    title: '🎉 $100 off for the first 50 customers',
+    backgroundClass: 'bg-primary'
+}

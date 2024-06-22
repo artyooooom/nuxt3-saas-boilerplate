@@ -6,4 +6,9 @@ export default interface LandingHeaderProps {
     appLogo?: string | null;
     links: LinkProps[];
     buttons?: ButtonProps[];
+    announcement?: {
+        title: string,
+        backgroundClass?: string
+        link?: string
+    };
 }
