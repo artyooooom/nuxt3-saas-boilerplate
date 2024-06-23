@@ -27,5 +27,6 @@ export const buttonsData: ButtonProps[] = [{
 
 export const announcement = {
     title: '🎉 $100 off for the first 50 customers',
-    backgroundClass: 'bg-primary'
+    backgroundClass: 'bg-primary',
+    link: '/'
 }
