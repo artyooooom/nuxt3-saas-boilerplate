@@ -1,11 +1,14 @@
 <script setup lang="ts">
   import UserCreationForm from '@/components/forms/UserCreationForm.vue'
   import { cn } from '@/lib/utils'
+  import { auth } from '@/middleware/auth'
+
 
   const appConfig = useAppConfig()
 
   definePageMeta({
-    layout: false
+    layout: false,
+    middleware: [auth]
   })
 
   const background = '/images/bg.jpeg'

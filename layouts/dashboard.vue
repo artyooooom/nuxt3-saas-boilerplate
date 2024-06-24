@@ -15,7 +15,7 @@
     <div class="hidden space-y-6 max-w-screen-xl mx-auto pt-32 pb-16 md:block px-4">
         <div class="space-y-0.5 mb-12">
             <h1 class="text-4xl tracking-tighter font-extrabold">Dashboard</h1>
-            <p class="text-muted-foreground">
+            <p class="font-light text-gray-500">
                 Access all the required instruments using your personal dashboard
             </p>
         </div>

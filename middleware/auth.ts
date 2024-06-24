@@ -1,11 +1,15 @@
 export let auth = defineNuxtRouteMiddleware((to, from) => {
     
     const user = useSupabaseUser()
-    console.log(to.path)
-    if(!user.value) {
+
+    if(!user.value && to.path === '/dashboard') {
         return navigateTo('/auth')
     }
 
-    return
+    if(user.value && (to.path === '/auth' || to.path === '/create-account')) {
+        return navigateTo('/dashboard')
+    }
+
+    return 
 
 })
