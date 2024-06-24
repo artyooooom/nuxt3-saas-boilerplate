@@ -3,11 +3,13 @@
 definePageMeta({
     layout: 'default'
 });
+
 </script>
 
 <template>
     <!-- chat-gpt prompt for terms & conditions generation -->
-    <!-- My website name is [WEBSITE]
+    <!-- Act as a legal expert. Write me a comprehensive terms and conditions page for my website.
+        My website name is [WEBSITE]
         My business name is [BUSINESS NAME] I sell [PRODUCT] for [NICHE]
         My email is [EMAIL]
         My address is [Adress].
