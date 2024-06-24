@@ -9,8 +9,9 @@ The Nuxt 3 boilerplate with all you need to build your SaaS or any other web app
 - [ ] Write comments on where actions required (*i.e. setting up article data in blog/article-example-page.vue)
 - [ ] Rewrite the README
 - [ ] Write a documentation / make an explanation video
-- [ ] Authentication via Supabase
-- [ ] Make a simple dashboard with ability to connect external APIs
+- [x] Authentication via Supabase
+- [x] Make a simple dashboard with ability to connect external APIs
+- [ ] Connect an external payment gateway
 - [ ] SEO optimization of the website
 - [ ] Create a demo
 - [x] Blog
