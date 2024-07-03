@@ -8,6 +8,24 @@
         return `lg:grid-cols-${Math.min(count, 4)}`;
     });
 
+    for(let i = 0; i < props.pricingPlans.length; i++) {
+        let pricingPlan = props.pricingPlans[i]
+        
+        // if there is no custom action event - set the default one
+        // buy link generation and redirecting to checkout on click
+        if(!pricingPlan.action.event && pricingPlan.lemonsqueezyId) {
+            pricingPlan.action.event = (async () => {
+                const url = await $fetch('/api/getProductBuyLink/' + pricingPlan.lemonsqueezyId)
+                
+                if(url) {
+                    navigateTo(url, {
+                        external: true
+                    })
+                }
+            })
+        }
+    }
+
 </script>
 
 <template>
@@ -28,7 +46,7 @@
                     <span>{{ feature }}</span>
                 </li>
             </ul>
-            <a href="#" class="bg-primary text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Get started</a>
+            <a @click="pricingPlan.action.event" class="bg-primary cursor-pointer text-white focus:ring-4 font-medium rounded-lg text-sm px-5 py-2.5 text-center">{{ pricingPlan.action.title }}</a>
         </div>
     </div>
 </template>

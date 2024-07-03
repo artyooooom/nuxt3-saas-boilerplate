@@ -9,6 +9,7 @@ import LandingCTA from '@/components/blocks/landing/landing-cta/LandingCTA.vue';
 import LandingPricings from '@/components/blocks/landing/landing-pricings/LandingPricings.vue';
 import { type ButtonProps, type LogoProps, type TestimonialProps, type PricingPlanProps, type AccordionItemProps, type ImageProps } from '@/components/blocks/types';
 
+
 definePageMeta({
     layout: 'default'
 });
@@ -121,7 +122,17 @@ const pricingPlans: PricingPlanProps[] = [{
     pricing: '$29',
     period: 'year',
     features: ['Individual configuration', 'No setup, or hidden fees', 'Team size: 1 developer', 'Premium support: 6 months', 'Free updates: 6 months'],
-    action: 'Get started'
+    action: {
+        title: 'Get started',
+        // event: async () => {
+        //     const { checkoutUrl } = await $fetch('/api/createCheckout')
+
+        //     navigateTo(checkoutUrl, {
+        //         external: true
+        //     })
+        // }
+    },
+    lemonsqueezyId: 298503,
 },]
 
 const alreadyUsing = {

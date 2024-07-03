@@ -105,7 +105,7 @@ let markedDescription = computed(() => {
         </div>
       </div>
       <div class="lg:mt-0 lg:col-span-5 lg:flex" :class="{ 'justify-center': (align === 'center') }">
-        <img class="max-w-3xl w-full" :class="{ 'my-8': (align === 'center') }" :src="image.url" :alt="image.alt">
+        <img class="lg:max-w-3xl w-full" :class="{ 'my-8': (align === 'center') }" :src="image.url" :alt="image.alt">
       </div>
     </div>
   </section>

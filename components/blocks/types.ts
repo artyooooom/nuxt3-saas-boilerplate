@@ -32,7 +32,11 @@ export type PricingPlanProps = {
     pricing: string,
     period: string,
     features: string[],
-    action: string
+    action: {
+        title: string,
+        event?: any
+    },
+    lemonsqueezyId?: number
 }
 
 export type LinkProps = {
