@@ -14,6 +14,7 @@ The Nuxt 3 boilerplate with all you need to build your SaaS or any other web app
 - [ ] Connect an external payment gateway
 - [ ] SEO optimization of the website
 - [ ] Create a demo
+- [ ] Connect a support system chat
 - [x] Blog
 - [x] Landing blocks
 
