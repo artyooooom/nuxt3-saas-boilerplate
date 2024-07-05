@@ -12,15 +12,16 @@ export default defineEventHandler(async (event) => {
 
             const eventName = headers['x-event-name']
             const sign = headers['x-signature']
+            
+            // if there's no body of request / no signature / no event name provided - throw an error
+            if(!rawBody || !sign || !eventName) throw new Error('One of required parameters is missing')
+            
+            // if the signature of request is not validated -  throw an error
+            if(!(await lemonsqueezy.signRequest(rawBody, sign))) throw new Error('Request was not validated')
+            
             const customerEmail = body.data.attributes.user_email
             const customerId = body.data.attributes.customer_id
             const productId = body.data.attributes.first_order_item.product_id
-
-            // if there's no body of request / no signature / no event name provided - throw an error
-            if(!rawBody || !sign || !eventName) throw 'One of required parameters is missing'
-
-            // if the signature of request is not validated -  throw an error
-            if(!(await lemonsqueezy.signRequest(rawBody, sign))) throw 'Request was not validated'
 
             // else everything's validated and we proccess the webhook
             if(eventName === 'order_created') {
@@ -50,6 +51,7 @@ export default defineEventHandler(async (event) => {
 
         }
     } catch(e: any) {
-        return setResponseStatus(event, 500, e)
+        console.log("🚀 ~ defineEventHandler ~ e:", e.message)
+        return setResponseStatus(event, 500, e.message)
     }
   })

@@ -1,7 +1,10 @@
 import { Sequelize } from 'sequelize';
+import pg from 'pg'
 
 export const sequelize = new Sequelize(process.env.SUPABASE_POSTGRES!, {
-    logging: false
+    logging: false,
+    dialect: 'postgres',
+    dialectModule: pg, // I've added this.
 })
 
 try {
