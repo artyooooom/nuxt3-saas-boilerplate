@@ -36,7 +36,7 @@ export type PricingPlanProps = {
         title: string,
         event?: any
     },
-    lemonsqueezyId?: number
+    lemonsqueezyId?: number // imported from lemonsqueezy
 }
 
 export type LinkProps = {

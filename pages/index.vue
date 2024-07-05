@@ -133,7 +133,7 @@ const pricingPlans: PricingPlanProps[] = [{
         // }
     },
     lemonsqueezyId: 298503,
-},]
+    }]
 
 const alreadyUsing = {
     showStars: true,
