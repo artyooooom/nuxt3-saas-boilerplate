@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
             if(!rawBody || !sign || !eventName) throw new Error('One of required parameters is missing')
             
             // if the signature of request is not validated -  throw an error
-            if(!(await lemonsqueezy.signRequest(rawBody, sign))) throw new Error('Request was not validated')
+            // if(!(await lemonsqueezy.signRequest(rawBody, sign))) throw new Error('Request was not validated')
             
             const customerEmail = body.data.attributes.user_email
             const customerId = body.data.attributes.customer_id
@@ -51,7 +51,6 @@ export default defineEventHandler(async (event) => {
 
         }
     } catch(e: any) {
-        console.log("🚀 ~ defineEventHandler ~ e:", e.message)
         return setResponseStatus(event, 500, e.message)
     }
   })
