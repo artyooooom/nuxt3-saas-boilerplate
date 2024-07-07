@@ -15,6 +15,8 @@
   } from '@/components/ui/form'
   import { Input } from '@/components/ui/input'
 
+  let props = defineProps<{email: string}>()
+
   const formSchema = toTypedSchema(z.object({
     email: z.string().email(),
     password: z.string().min(2).max(50),
@@ -31,10 +33,7 @@
   const form = useForm({
     validationSchema: formSchema,
     initialValues: {
-      // email: 'example@gmail.com',
-      // password: '123',
-      // confirmPassword: '123',
-      terms: false,
+      email: props.email
     },
   })
   const supabase = useSupabaseClient()
@@ -75,7 +74,7 @@
       <FormItem class="mb-3">
             <FormLabel>Email</FormLabel>
             <FormControl>
-              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none" />
+              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none"/>
             </FormControl>
         <FormMessage />
       </FormItem>

@@ -16,6 +16,8 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 
+let props = defineProps<{email: string}>()
+
 const formSchema = toTypedSchema(z.object({
   email: z.string().email(),
   password: z.string().min(2).max(50)
@@ -25,8 +27,7 @@ const { toast } = useToast()
 const form = useForm({
   validationSchema: formSchema,
   initialValues: {
-    email: 'agasparyan0000@gmail.com',
-    password: '123123'
+    email: props.email
   }
 })
 
@@ -83,7 +84,7 @@ const onSubmit = form.handleSubmit(async (values) => {
       <FormItem class="mb-3">
             <FormLabel>Email</FormLabel>
             <FormControl>
-              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none" />
+              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none"/>
             </FormControl>
         <FormMessage />
       </FormItem>
