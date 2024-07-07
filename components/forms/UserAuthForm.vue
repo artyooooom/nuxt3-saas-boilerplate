@@ -36,44 +36,28 @@ const supabase = useSupabaseClient()
 const onSubmit = form.handleSubmit(async (values) => {
   try {
     
-    console.clear()
     let { data, error } = await supabase.auth.signInWithPassword({
         email: values.email,
         password: values.password
-      })
-      if(error) throw error
-      
-      useRouter().push('/dashboard')
-    } catch(e: any) {
-      
-      return toast({
-        title: 'Problem occured',
-        description: e.message,
-        variant: 'destructive',
-        action: h(ToastAction, {
-          altText: 'Try again',
-        }, {
-          default: () => 'Try again',
-        }),
-      });
+    })
 
-    }
-
+    if(error) throw error
     
-      // if(error) console.log(error.message)
-      // if(error) return toast({
-      //   title: 'dwadkak',
-      //   description: 'There was a problem with your request.',
-      //   variant: 'destructive',
-      //   action: h(ToastAction, {
-      //     altText: 'Try again',
-      //   }, {
-      //     default: () => 'Try again',
-      //   }),
-      // });
+    useRouter().push('/dashboard')
+  } catch(e: any) {
+      
+    return toast({
+      title: 'Problem occured',
+      description: e.message,
+      variant: 'destructive',
+      action: h(ToastAction, {
+        altText: 'Try again',
+      }, {
+        default: () => 'Try again',
+      }),
+    });
 
-      // console.log("🚀 ~ onSubmit ~ data:", data)
-  
+  }
 
 })
 </script>
@@ -84,7 +68,7 @@ const onSubmit = form.handleSubmit(async (values) => {
       <FormItem class="mb-3">
             <FormLabel>Email</FormLabel>
             <FormControl>
-              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none"/>
+              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none" disabled/>
             </FormControl>
         <FormMessage />
       </FormItem>

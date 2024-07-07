@@ -44,7 +44,7 @@ const onSubmit = form.handleSubmit(async (values) => {
         }
     })
 
-    if(!responseData) throw new Error('No account found with this email. Make sure you entered the same email as in the checkout')
+    if(!responseData) throw new Error('Account not found for the provided email address. Please ensure that the email entered matches the one used during checkout.')
 
     emit('changeFormState', {
       isAccountCreated: responseData.is_account_created,

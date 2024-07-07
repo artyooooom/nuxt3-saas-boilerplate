@@ -36,7 +36,10 @@
       email: props.email
     },
   })
+
   const supabase = useSupabaseClient()
+
+  let isDisabled = ref(false);
 
   const onSubmit = form.handleSubmit(async (values) => {
     try {
@@ -45,12 +48,22 @@
         email: values.email,
         password: values.password
       })
-
+      
       if(error) throw error
+            
+      $fetch('/api/updateAccountCreationStatus', {
+        method: 'post',
+        body: { 
+          email: values.email,
+        }
+      })
+      
+      isDisabled.value = true
       return toast({
         title: 'Success',
         description: 'Check your email for confirmation link!',
       });
+    
       
     } catch(e: any) {
       return toast({
@@ -74,7 +87,7 @@
       <FormItem class="mb-3">
             <FormLabel>Email</FormLabel>
             <FormControl>
-              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none"/>
+              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none" disabled/>
             </FormControl>
         <FormMessage />
       </FormItem>
@@ -118,8 +131,8 @@
         <FormMessage />
       </FormItem>
     </FormField>
-    <Button type="submit" class="w-full mt-3">
-      Submit
+    <Button type="submit" class="w-full mt-3" :disabled="isDisabled">
+      Create an account
     </Button>
   </form>
 </template>
