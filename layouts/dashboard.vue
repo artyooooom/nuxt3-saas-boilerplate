@@ -31,4 +31,6 @@
         </div>
     </div>
     <Footer v-bind="appConfig" :sections="footerSections" subheading="© 2021-2022 Landwind™. All Rights Reserved. Built with Flowbite and Tailwind CSS." :socials="socials"/>
+
+    <div v-if="appConfig.supportChat.isEnabled" v-html="appConfig.supportChat.embed"></div>
 </template>
