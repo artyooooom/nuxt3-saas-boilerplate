@@ -5,15 +5,15 @@ export const footerSections = [{
     links: [
         {
             title: 'About',
-            url: '/about',
+            url: '#',
         },
         {
             title: 'Careers',
-            url: '/careers',
+            url: '#',
         },
         {
             title: 'Brand Center',
-            url: '/brand-center',
+            url: '#',
         },
         {
             title: 'Blog',
@@ -25,15 +25,15 @@ export const footerSections = [{
     links: [
         {
             title: 'Discord',
-            url: '/discord',
+            url: '#',
         },
         {
             title: 'Twitter',
-            url: '/twitter',
+            url: '#',
         },
         {
             title: 'Facebook',
-            url: '/facebook',
+            url: '#',
         },
         {
             title: 'Blog',
@@ -45,15 +45,15 @@ export const footerSections = [{
     links: [
         {
             title: 'About',
-            url: '/about',
+            url: '#',
         },
         {
             title: 'Careers',
-            url: '/careers',
+            url: '#',
         },
         {
             title: 'Brand Center',
-            url: '/brand-center',
+            url: '#',
         },
         {
             title: 'Blog',
@@ -65,15 +65,15 @@ export const footerSections = [{
     links: [
         {
             title: 'Discord',
-            url: '/discord',
+            url: '#',
         },
         {
             title: 'Twitter',
-            url: '/twitter',
+            url: '#',
         },
         {
             title: 'Facebook',
-            url: '/facebook',
+            url: '#',
         },
         {
             title: 'Blog',
@@ -85,15 +85,15 @@ export const footerSections = [{
     links: [
         {
             title: 'About',
-            url: '/about',
+            url: '#',
         },
         {
             title: 'Careers',
-            url: '/careers',
+            url: '#',
         },
         {
             title: 'Brand Center',
-            url: '/brand-center',
+            url: '#',
         },
         {
             title: 'Blog',

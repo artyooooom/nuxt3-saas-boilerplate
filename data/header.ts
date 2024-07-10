@@ -2,14 +2,14 @@ import { type ButtonProps, type LinkProps } from '@/components/blocks/types';
 
 export const linksData: LinkProps[] = [{
     title: 'Pricings',
-    url: '/pricings',
+    url: '#',
     isActive: true
 }, {
     title: 'Features',
-    url: '/features'
+    url: '#'
 }, {
     title: 'Blog',
-    url: '/blog/'
+    url: '/blog'
 }]
 
 
