@@ -11,10 +11,10 @@ The Nuxt 3 boilerplate with all you need to build your SaaS or any other web app
 - [ ] Write a documentation / make an explanation video
 - [x] Authentication via Supabase
 - [x] Make a simple dashboard with ability to connect external APIs
-- [ ] Connect an external payment gateway
-- [ ] SEO optimization of the website
+- [x] Connect an external payment gateway
+- [x] SEO optimization of the website
 - [ ] Create a demo
-- [ ] Connect a support system chat
+- [x] Connect a support system chat
 - [x] Blog
 - [x] Landing blocks
 
