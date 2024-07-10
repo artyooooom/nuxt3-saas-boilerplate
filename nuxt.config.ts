@@ -20,5 +20,9 @@ export default defineNuxtConfig({
     description: 'Welcome to my awesome site!',
     defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
   },
-
+  sitemap: {
+    sources: [
+      '/api/__sitemap__/urls',
+    ]
+  }
 })
