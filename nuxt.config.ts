@@ -1,6 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
+  app: {
+    head: {
+      script: [{ src: 'https://unpkg.com/flowbite@1.4.1/dist/flowbite.js' }],
+    },
+  },
   modules: [
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
