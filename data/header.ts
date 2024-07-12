@@ -20,9 +20,6 @@ export const buttonsData: ButtonProps[] = [{
         target: '_blank'
     },
     variant: 'destructive'
-}, {
-    title: 'Example',
-    variant: 'outline'
 }]
 
 export const announcement = {
