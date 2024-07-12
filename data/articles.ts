@@ -15,7 +15,7 @@ export const articles = [{
     Dan's Vision</h2>
 <p class="tracking-wide leading-relaxed font-light">
     Daniel Day, widely known as Dapper Dan, was born in Harlem, New York, in 1944. Described as a "natural
-    born hustler," <a href="#">Dan's diverse passions</a> spanned fashion, journalism, and gambling. In the late 1960s, Dan
+    born hustler," <a href="/" target="_blank">Dan's diverse passions</a> spanned fashion, journalism, and gambling. In the late 1960s, Dan
     worked for the Harlem-based newspaper Forty Acres and a Mule, where he wrote commentaries on topics
     ranging from gentrification to pop culture.
     <br><br>

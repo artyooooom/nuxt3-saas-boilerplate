@@ -10,7 +10,7 @@
 </script>
 
 <template>
-    <article class="pt-32 max-w-screen-xl mx-auto px-4">
+    <article class="pb-8 pt-20 max-w-screen-xl mx-auto px-4">
         <h1 class="text-4xl tracking-tighter font-extrabold mb-12">All Articles</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
             <ArticleCard v-for="article in articles" :key="article.url" v-bind="article"/>

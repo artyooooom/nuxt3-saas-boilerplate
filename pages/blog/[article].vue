@@ -20,7 +20,7 @@
 </script>
 
 <template>
-    <article class="pt-32 max-w-3xl mx-auto px-4">
+    <article class="py-12 max-w-3xl mx-auto px-4">
 
         <Breadcrumb v-if="article" class="mb-4">
             <BreadcrumbList>
@@ -56,7 +56,7 @@
     </article>
 </template>
 
-<style scoped>
+<style>
 .article-contents>* {
     margin: 20px 0;
 }

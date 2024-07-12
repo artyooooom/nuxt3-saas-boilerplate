@@ -12,7 +12,7 @@
 
 <template>
     <Header v-bind="appConfig" :links="linksData" :buttons="buttonsData"/>
-    <div class="hidden space-y-6 max-w-screen-xl mx-auto pt-32 pb-16 md:block px-4">
+    <div class="space-y-6 max-w-screen-xl mx-auto pb-8 pt-20 md:block px-4">
         <div class="space-y-0.5 mb-12">
             <h1 class="text-4xl tracking-tighter font-extrabold">Dashboard</h1>
             <p class="font-light text-gray-500">
@@ -20,7 +20,7 @@
             </p>
         </div>
         <div class="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
-        <aside class="-mx-4 lg:w-1/5">
+        <aside class="lg:w-1/5 overflow-x-scroll">
             <SidebarNav :sidebar-nav-items="sidebarNavItems"/>
         </aside>
         <div class="flex-1 lg:max-w-2xl">
