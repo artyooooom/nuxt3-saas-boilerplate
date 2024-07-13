@@ -19,11 +19,12 @@ export default defineNuxtConfig({
     '/blog': { prerender: true },
     '/blog/**': { isr: true },
   },
+  // _*: define the SEO meta of the website
   site: {
-    url: 'https://nuxt3-saas-boilerplate.vercel.app/',
-    name: 'Nuxt 3 Boilerplate',
-    description: 'Welcome to my awesome site!',
-    defaultLocale: 'en', // not needed if you have @nuxtjs/i18n installed
+    url: '/',
+    name: '',
+    description: '',
+    defaultLocale: 'en',
   },
   sitemap: {
     sources: [

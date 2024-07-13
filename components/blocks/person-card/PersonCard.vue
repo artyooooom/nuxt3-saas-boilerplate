@@ -1,33 +1,35 @@
 <script setup lang="ts">
-    import { type PersonProps } from '../types';
 
-    const props = withDefaults(defineProps<PersonProps>(), {
-        name: 'No person name provided'
-    })
+import { type PersonProps } from '../types';
 
-    const shortName = computed(() => {
+const props = withDefaults(defineProps<PersonProps>(), {
+    name: 'No person name provided'
+})
 
-        const name = props.name;
+const shortName = computed(() => {
 
-        let firstLetter = name[0];
+    const name = props.name;
 
-        let secondLetter;
+    let firstLetter = name[0];
 
-        // if name consists of 2 words - take first letter of first word + first letter of second word
-        // else take first two letter of first word
-        if(name.split(' ').length == 2) { 
-            secondLetter = name.split(' ')[1][0]
-        } else {
-            secondLetter = name[1]
-        }
+    let secondLetter;
 
-        return (firstLetter + secondLetter).toUpperCase()
+    // if name consists of 2 words - take first letter of first word + first letter of second word
+    // else take first two letter of first word
+    if (name.split(' ').length == 2) {
+        secondLetter = name.split(' ')[1][0]
+    } else {
+        secondLetter = name[1]
+    }
 
-    })
+    return (firstLetter + secondLetter).toUpperCase()
+
+})
 
 </script>
 
 <template>
+
     <div class="flex items-center space-x-4">
         <Avatar>
             <AvatarImage v-if="avatar" :src="avatar.url" />
@@ -41,6 +43,4 @@
 
 </template>
 
-<style>
-
-</style>
+<style></style>

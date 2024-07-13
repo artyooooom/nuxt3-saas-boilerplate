@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useToast } from '@/components/ui/toast/use-toast'
@@ -31,52 +32,54 @@ const emit = defineEmits<{
   (e: 'changeFormState', data: {
     isAccountCreated: boolean,
     checkedEmail: string,
-}): void 
+  }): void
 }>()
 
 const onSubmit = form.handleSubmit(async (values) => {
   try {
 
     const responseData = await $fetch('/api/checkIfAccountExists', {
-        method: 'post',
-        body: { 
-          email: values.email,
-        }
+      method: 'post',
+      body: {
+        email: values.email,
+      }
     })
 
-    if(!responseData) throw new Error('Account not found for the provided email address. Please ensure that the email entered matches the one used during checkout.')
+    if (!responseData) throw new Error('Account not found for the provided email address. Please ensure that the email entered matches the one used during checkout.')
 
     emit('changeFormState', {
       isAccountCreated: responseData.is_account_created,
       checkedEmail: values.email
     })
-  
-  } catch(e: any) {
-      
-      return toast({
-        title: 'Problem occured',
-        description: e.message,
-        variant: 'destructive',
-        action: h(ToastAction, {
-          altText: 'Try again',
-        }, {
-          default: () => 'Try again',
-        }),
-      });
 
-    }
+  } catch (e: any) {
+
+    return toast({
+      title: 'Problem occured',
+      description: e.message,
+      variant: 'destructive',
+      action: h(ToastAction, {
+        altText: 'Try again',
+      }, {
+        default: () => 'Try again',
+      }),
+    });
+
+  }
 })
 
 </script>
 
 <template>
+
   <form @submit="onSubmit">
     <FormField v-slot="{ componentField }" name="email">
       <FormItem class="mb-3">
-            <FormLabel>Email</FormLabel>
-            <FormControl>
-              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none" />
-            </FormControl>
+        <FormLabel>Email</FormLabel>
+        <FormControl>
+          <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off"
+            class="focus:outline-none" />
+        </FormControl>
         <FormMessage />
       </FormItem>
     </FormField>
@@ -85,4 +88,5 @@ const onSubmit = form.handleSubmit(async (values) => {
       Continue
     </Button>
   </form>
+
 </template>

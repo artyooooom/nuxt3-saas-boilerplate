@@ -1,3 +1,6 @@
+// _**: fill the navigation links for user's dashboard
+// check it at /dashboard
+
 export const sidebarNavItems = [
     {
         id: 'home',

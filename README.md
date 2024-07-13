@@ -6,7 +6,7 @@ The Nuxt 3 boilerplate with all you need to build your SaaS or any other web app
 
 ## To-do List
 
-- [ ] Write comments on where actions required (*i.e. setting up article data in blog/article-example-page.vue)
+- [x] Write comments on where actions required (*i.e. setting up article data in blog/article-example-page.vue)
 - [ ] Rewrite the README
 - [ ] Write a documentation / make an explanation video
 - [x] Authentication via Supabase

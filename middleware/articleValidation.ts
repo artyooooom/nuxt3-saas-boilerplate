@@ -8,7 +8,7 @@ export let articleValidation = defineNuxtRouteMiddleware((to, from) => {
 
     const article = articles.find((article) => {
         return article.url === articleId
-    })    
+    })
 
     if (!event) return abortNavigation()
     if (!article) return setResponseStatus(event, 404)

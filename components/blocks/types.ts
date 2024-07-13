@@ -2,6 +2,11 @@ import { type Props } from '../ui/button/Button.vue';
 
 export interface ButtonProps extends Props {
     title: string,
+    icon?: {
+        name: string,
+        color: string,
+        size?: string
+    },
     link?: {
         url: string,
         target?: '_blank'
@@ -22,7 +27,7 @@ export type PersonProps = {
 
 export type TestimonialProps = {
     person: PersonProps,
-    content: string,  
+    content: string,
     image?: ImageProps,
 }
 
@@ -58,9 +63,9 @@ export type LogoProps = {
 }
 
 export type FooterSocialsProps = {
-    twitter?: string,
-    instagram?: string,
-    linkedin?: string,
-    github?: string,
-    facebook?: string,
+    twitter?: string | null,
+    instagram?: string | null,
+    linkedin?: string | null,
+    github?: string | null,
+    facebook?: string | null,
 }

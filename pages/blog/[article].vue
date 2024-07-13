@@ -1,32 +1,34 @@
 <script setup lang="ts">
-    import ArticleContent from '@/components/blocks/article/article-content/ArticleContent.vue'
-    import notFound from '~/components/blocks/404/notFound.vue'
-    import { articleValidation } from '@/middleware/articleValidation'
-    import { articles } from '@/data/articles'
 
-    const articleId = useRoute().params.article
+import ArticleContent from '@/components/blocks/article/article-content/ArticleContent.vue'
+import notFound from '~/components/blocks/404/notFound.vue'
+import { articleValidation } from '@/middleware/articleValidation'
+import { articles } from '@/data/articles'
 
-    const article = articles.find((article) => {
-        return article.url === articleId
-    })    
-    
-    definePageMeta({
-        layout: 'default',
-        middleware: [articleValidation]
-    })
+const articleId = useRoute().params.article
 
-    const { appName } = useAppConfig()
+const article = articles.find((article) => {
+    return article.url === articleId
+})
+
+definePageMeta({
+    layout: 'default',
+    middleware: [articleValidation]
+})
+
+const { appName } = useAppConfig()
 
 </script>
 
 <template>
-    <article class="py-12 max-w-3xl mx-auto px-4">
+
+    <article class="pt-12 pb-0 max-w-3xl mx-auto px-4">
 
         <Breadcrumb v-if="article" class="mb-4">
             <BreadcrumbList>
                 <BreadcrumbItem>
                     <BreadcrumbLink as-child>
-                        <a href="/">{{ appName }}</a>
+                        <a href="/">Home</a>
                     </BreadcrumbLink>
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
@@ -46,14 +48,15 @@
 
         <div class="max-w-screen-lg mx-auto mb-8">
 
-            <!-- Here insert article's content -->
             <ArticleContent v-if="article" v-bind="article">
                 <div class="article-contents" v-html="article.content"></div>
             </ArticleContent>
 
-            <notFound v-else/>
+            <notFound v-else />
         </div>
+        
     </article>
+    
 </template>
 
 <style>
@@ -61,7 +64,7 @@
     margin: 20px 0;
 }
 
-.article-contents > * > a {
+.article-contents>*>a {
     text-decoration: underline;
     font-weight: light;
     color: dodgerblue;

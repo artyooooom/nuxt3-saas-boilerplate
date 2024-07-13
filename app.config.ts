@@ -1,8 +1,9 @@
+// _*: define the application's meta info & support chat embed code (if got one)
 export default defineAppConfig({
-    appName: "SAAS Example",
+    appName: '',
     appLogo: null,
     supportChat: {
-        isEnabled: true,
-        embed: `<script src="//code.tidio.co/jticdb77r6jy6wtt28ysaj4ahbif7iky.js" async></script>`
+        isEnabled: false,
+        embed: ''
     }
 });

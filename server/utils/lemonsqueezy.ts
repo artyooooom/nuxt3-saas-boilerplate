@@ -1,9 +1,7 @@
 import {
-    getAuthenticatedUser,
-    lemonSqueezySetup,
-    createCheckout, 
-    getProduct,
-    type NewCheckout
+  getAuthenticatedUser,
+  lemonSqueezySetup,
+  getProduct,
 } from "@lemonsqueezy/lemonsqueezy.js";
 import crypto from 'crypto'
 
@@ -12,31 +10,31 @@ export class LemonSqueezy {
   signingSecret: string;
   storeId: number;
   constructor() {
-      this.apiKey = process.env.LEMONSQUEEZY_API_KEY
-      this.signingSecret = process.env.LEMONSQUEEZY_SECRET!
-      // get store id - https://app.lemonsqueezy.com/settings/stores
-      this.storeId = 96075
+    this.apiKey = process.env.LEMONSQUEEZY_API_KEY
+    this.signingSecret = process.env.LEMONSQUEEZY_SECRET!
+    // get store id - https://app.lemonsqueezy.com/settings/stores
+    this.storeId = Number(process.env.LEMONSQUEEZY_STORE_ID)
 
-      this.init()
-    }
-    
-    async init() {
-      try {
+    this.init()
+  }
 
-        lemonSqueezySetup({
-          apiKey: this.apiKey,
-          onError: (error: any) => console.error("Error!", error),
-        });
-        
-        const { data, error } = await getAuthenticatedUser();
-        
-        if (error) {
-          throw error.message;
-        }
+  async init() {
+    try {
 
-      } catch(e) {
-        console.log('LemonSqueezy -> init(), Error occured: ', e)
+      lemonSqueezySetup({
+        apiKey: this.apiKey,
+        onError: (error: any) => console.error("Error!", error),
+      });
+
+      const { data, error } = await getAuthenticatedUser();
+
+      if (error) {
+        throw error.message;
       }
+
+    } catch (e) {
+      console.log('LemonSqueezy -> init(), Error occured: ', e)
+    }
 
   }
 
@@ -46,13 +44,13 @@ export class LemonSqueezy {
       const { statusCode, error, data } = await getProduct(productId);
 
       // checking if errors
-      if(error) throw error;
+      if (error) throw error;
       // checking if status code is not 2xx
-      if(!(statusCode >= 200 && statusCode <= 299)) throw 'Response to LemonSqueezy failed with status code' + statusCode;
+      if (!(statusCode >= 200 && statusCode <= 299)) throw 'Response to LemonSqueezy failed with status code' + statusCode;
 
       return data.data.attributes.buy_now_url
-      
-    } catch(e) {
+
+    } catch (e) {
       throw e
     }
   }
@@ -64,12 +62,12 @@ export class LemonSqueezy {
       const hmac = crypto.createHmac('sha256', secret);
       const digest = Buffer.from(hmac.update(raw).digest('hex'), 'utf8');
       const signature = Buffer.from(sign || '', 'utf8');
-      
+
       if (!crypto.timingSafeEqual(digest, signature)) {
-          throw new Error('Invalid signature.');
+        throw new Error('Invalid signature.');
       }
       return true
-    } catch(e) {
+    } catch (e) {
       throw e
     }
 

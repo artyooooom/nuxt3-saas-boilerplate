@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { useForm } from 'vee-validate'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useToast } from '@/components/ui/toast/use-toast'
@@ -16,7 +17,7 @@ import {
 } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 
-let props = defineProps<{email: string}>()
+let props = defineProps<{ email: string }>()
 
 const formSchema = toTypedSchema(z.object({
   email: z.string().email(),
@@ -35,17 +36,17 @@ const supabase = useSupabaseClient()
 
 const onSubmit = form.handleSubmit(async (values) => {
   try {
-    
+
     let { data, error } = await supabase.auth.signInWithPassword({
-        email: values.email,
-        password: values.password
+      email: values.email,
+      password: values.password
     })
 
-    if(error) throw error
-    
+    if (error) throw error
+
     useRouter().push('/dashboard')
-  } catch(e: any) {
-      
+  } catch (e: any) {
+
     return toast({
       title: 'Problem occured',
       description: e.message,
@@ -60,25 +61,28 @@ const onSubmit = form.handleSubmit(async (values) => {
   }
 
 })
+
 </script>
 
 <template>
+
   <form @submit="onSubmit">
     <FormField v-slot="{ componentField }" name="email">
       <FormItem class="mb-3">
-            <FormLabel>Email</FormLabel>
-            <FormControl>
-              <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none" disabled/>
-            </FormControl>
+        <FormLabel>Email</FormLabel>
+        <FormControl>
+          <Input type="text" placeholder="Email" v-bind="componentField" autocomplete="off" class="focus:outline-none"
+            disabled />
+        </FormControl>
         <FormMessage />
       </FormItem>
     </FormField>
     <FormField v-slot="{ componentField }" name="password">
       <FormItem>
-            <FormLabel>Password</FormLabel>
-            <FormControl>
-              <Input type="text" placeholder="Password" v-bind="componentField" autocomplete="off" />
-            </FormControl>
+        <FormLabel>Password</FormLabel>
+        <FormControl>
+          <Input type="text" placeholder="Password" v-bind="componentField" autocomplete="off" />
+        </FormControl>
         <FormMessage />
       </FormItem>
     </FormField>
@@ -87,4 +91,5 @@ const onSubmit = form.handleSubmit(async (values) => {
       Sign In
     </Button>
   </form>
+
 </template>

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { type LandingHeroProps } from './types';
 
 let props = withDefaults(defineProps<LandingHeroProps>(), {
@@ -23,35 +24,37 @@ let getCenteredClasses = computed(() => {
 // transform the "*" to stylings
 let markedHeading = computed(() => {
   const regex = /(\*)(.*?)\1/;
-      const transformedText = props.heading.title.replace(regex, (match, p1, p2) => {
-        switch (props.heading.styling) {
-          case 1:
-            return `<span class="relative text-primary">${p2}</span>`;
-            default:
-            return `<span class="relative whitespace-nowrap"><span class="absolute bg-primary -left-1 -top-1 -bottom-1 -right-1 md:-top-0 md:-bottom-0 -rotate-1"></span><span class="relative text-white">${p2}</span></span>`;
-        }
-      });
-      return `<span class="mr-3 sm:mr-4 md:mr-5">${transformedText}</span>`;
+  const transformedText = props.heading.title.replace(regex, (match, p1, p2) => {
+    switch (props.heading.styling) {
+      case 1:
+        return `<span class="relative text-primary">${p2}</span>`;
+      default:
+        return `<span class="relative whitespace-nowrap"><span class="absolute bg-primary -left-1 -top-1 -bottom-1 -right-1 md:-top-0 md:-bottom-0 -rotate-1"></span><span class="relative text-white">${p2}</span></span>`;
+    }
+  });
+  return `<span class="mr-3 sm:mr-4 md:mr-5">${transformedText}</span>`;
 })
 
 // transform the "*" to stylings
 let markedDescription = computed(() => {
   const regex = /(\*)(.*?)\1/;
-      const transformedText = props.description.title.replace(regex, (match, p1, p2) => {
-        switch (props.description.styling) {
-          case 1:
-            return `<span class="relative border-b-4 border-primary">${p2}</span>`;
-            default:
-            return `<span class="relative whitespace-nowrap"><span class="absolute bg-primary -left-1 -top-1 -bottom-1 -right-1 md:-top-0 md:-bottom-0 -rotate-1"></span><span class="relative text-white">${p2}</span></span>`;
-        }
-      });
-      return `<span class="mr-3 sm:mr-4 md:mr-5">${transformedText}</span>`;
+  const transformedText = props.description.title.replace(regex, (match, p1, p2) => {
+    switch (props.description.styling) {
+      case 1:
+        return `<span class="relative border-b-4 border-primary">${p2}</span>`;
+      default:
+        return `<span class="relative whitespace-nowrap"><span class="absolute bg-primary -left-1 -top-1 -bottom-1 -right-1 md:-top-0 md:-bottom-0 -rotate-1"></span><span class="relative text-white">${p2}</span></span>`;
+    }
+  });
+  return `<span class="mr-3 sm:mr-4 md:mr-5">${transformedText}</span>`;
 })
+
 </script>
 
 <template>
+
   <section class="bg-white dark:bg-gray-900">
-    <div class="max-w-screen-xl px-8 py-8 lg:py-20 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12"
+    <div class="max-w-screen-xl px-8 py-8 lg:pt-20 lg:pb-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12"
       :class="{ getCenteredClasses, 'grid': (align === 'left') }">
       <div class="mr-auto place-self-center lg:col-span-7">
         <h1
@@ -61,7 +64,10 @@ let markedDescription = computed(() => {
           :class="getCenteredClasses" v-html="markedDescription"></p>
         <div class="space-y-4 sm:flex sm:space-y-0 space-x-4" :class="getCenteredClasses">
           <a v-for="(button, i) in buttons" :key="i" :href="button.link?.url">
-            <Button v-bind="button">{{ button.title }}</Button>
+            <Button v-bind="button">
+              <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
+              <span>{{ button.title }}</span>
+            </Button>
           </a>
         </div>
         <div class="flex my-6" :class="getCenteredClasses" v-if="alreadyUsing">
@@ -105,10 +111,12 @@ let markedDescription = computed(() => {
         </div>
       </div>
       <div class="lg:mt-0 lg:col-span-5 lg:flex" :class="{ 'justify-center': (align === 'center') }">
-        <img class="lg:max-w-3xl w-full" :class="{ 'my-8': (align === 'center') }" :src="image.url" :alt="image.alt">
+        <img class="lg:max-w-3xl w-full rounded" :class="{ 'my-8': (align === 'center') }" :src="image.url"
+          :alt="image.alt">
       </div>
     </div>
   </section>
+
 </template>
 
 
