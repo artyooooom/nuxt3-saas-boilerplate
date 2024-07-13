@@ -22,7 +22,7 @@ const appConfig = useAppConfig()
             </p>
         </div>
         <div class="flex flex-col space-y-8 lg:flex-row lg:space-x-12 lg:space-y-0">
-            <aside class="lg:w-1/5 overflow-x-scroll">
+            <aside class="lg:w-1/5 overflow-x-auto">
                 <SidebarNav :sidebar-nav-items="sidebarNavItems" />
             </aside>
             <div class="flex-1 lg:max-w-2xl">
