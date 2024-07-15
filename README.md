@@ -1,48 +1,67 @@
 # Nuxt 3 SAAS Boilerplate 
-The Nuxt 3 boilerplate with all you need to build your SaaS or any other web app landing page. Using shadcn-nuxt & tailwindcss.
 
-[See Demo](/) \
-[Documentation](/)
+Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all you need to build your SaaS or any other web app. Create & deliver your SaaS in a matter of days, not weeks!
 
-## To-do List
+[📎 See Demo](/) \
+[📄 Documentation](/)
 
-- [x] Write comments on where actions required (*i.e. setting up article data in blog/article-example-page.vue)
-- [ ] Rewrite the README
-- [ ] Write a documentation / make an explanation video
-- [x] Authentication via Supabase
-- [x] Make a simple dashboard with ability to connect external APIs
-- [x] Connect an external payment gateway
-- [x] SEO optimization of the website
-- [ ] Create a demo
-- [x] Connect a support system chat
-- [x] Blog
-- [x] Landing blocks
+## Stack
 
-## Available Blocks
+- [Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, layouts etc.
 
-* Header
-* LandingHero
-* LandingLogos
-* LandingCTA
-* LandingSection
-* LandingQuote
-* LandingTestimonials
-* LandingPricings
-* LandingFAQ
-* Footer
+- [Vite](https://vitejs.dev/) - Instant HMR.
 
-## Setup
+- [Tailwind CSS](https://tailwindcss.com) - The gold standard CSS utility framework
+
+- [shadcn](https://www.shadcn-vue.com/) - elegant nuxt 3 components/icons using Tailwind.
+
+- [Lemonsqueezy](lemonsqueezy.com) - for payments.
+
+- [Supabase](https://supabase.com/) - for auth, storage, database and realtime needs.
+
+- The `<script setup>` syntax.
+
+- SEO Optimized.
+
+- Data validation, incoming data validated with [Zod](https://zod.dev/), forms with [vee-validate](https://vee-validate.logaretm.com/v4/).
+
+## Features
+
+- Authentication & creation of users
+- Payments via lemonsqueezy (subscriptions plans available)
+- Ready-to-use blocks for easy landing page set up
+- Ready layouts & template pages - auth, user's dashboard (with middlewares)
+
+
+## Initial Setup
+Below are some additional setup tasks that are not directly related to code:
+
+- **Supabase:** Follow the instructions to set up Supabase, an essential part of this solution for Auth and DB management
+- **Lemonsqueezy:** Lemonsqueezy is used for the payments. You will need to set up your Lemonsqueezy account first & create products
+
+- After setting up the services, create a .env file from the .env.example file with all required data
+
+
+## Setup & Configuration
 
 ```bash
 npm install
 ```
 
+To configure the script use a search through contents of all files & set everything up using the comments inside
+- Search for "_*:" - required actions in code
+- Search for "_**:" - additional actions in code
+
+For deployment you can use [Vercel](https://vercel.com/)
+
 ## Development Server
+
 Start the development server on `http://localhost:3000`:
 
 ```bash
 npm run dev
 ```
+
 ## Production
 
 Build the application for production:
@@ -50,3 +69,9 @@ Build the application for production:
 ```bash
 npm run build
 ```
+
+----
+
+
+> Fully developed & designed by @artjhom \
+> [![Twitter URL](https://img.shields.io/twitter/url.svg?label=Follow%20artjhom&style=social&url=https%3A%2F%2Ftwitter.com%2Fartjhom)](https://twitter.com/artjhom)
