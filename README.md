@@ -9,13 +9,11 @@ Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all
 
 - [Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, layouts etc.
 
-- [Vite](https://vitejs.dev/) - Instant HMR.
-
 - [Tailwind CSS](https://tailwindcss.com) - The gold standard CSS utility framework
 
 - [shadcn](https://www.shadcn-vue.com/) - elegant nuxt 3 components/icons using Tailwind.
 
-- [Lemonsqueezy](lemonsqueezy.com) - for payments.
+- [Lemonsqueezy](https://lemonsqueezy.com) - for payments.
 
 - [Supabase](https://supabase.com/) - for auth, storage, database and realtime needs.
 
