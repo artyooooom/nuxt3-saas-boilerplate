@@ -28,6 +28,7 @@ Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all
 - Authentication & creation of users
 - Payments via lemonsqueezy (subscriptions plans available)
 - Ready-to-use blocks for easy landing page set up
+- Ready-to-use blog system
 - Ready layouts & template pages - auth, user's dashboard (with middlewares)
 
 
