@@ -1,7 +1,7 @@
-import { type ButtonProps } from '../types'
+import { type ButtonProps } from '@/components/blocks/types';
 
 export interface LandingCTAProps {
     heading: string,
     subheading: string,
-    actionButtons: ButtonProps[] 
+    buttons: ButtonProps[] 
 }
