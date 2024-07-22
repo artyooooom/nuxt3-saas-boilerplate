@@ -11,7 +11,8 @@ export default defineNuxtConfig({
     "shadcn-nuxt",
     "nuxt-icon",
     "@nuxtjs/supabase",
-    "@nuxtjs/seo"
+    "@nuxtjs/seo",
+    "nuxt-vercel-analytics"
   ],
   supabase: { redirect: false },
   routeRules: {
