@@ -16,7 +16,7 @@ const gridColsClass = computed(() => {
 
     <footer class="bg-white dark:bg-gray-800">
         <div class="max-w-screen-xl container p-4 py-6 mx-auto lg:py-8 md:p-8 lg:p-10">
-            <div class="grid grid-cols-1 gap-12 w-fit sm:grid-cols-2 md:grid-cols-3 mx-auto" :class="gridColsClass">
+            <div class="grid grid-cols-1 gap-12 w-fit sm:grid-cols-2 mx-auto" :class="gridColsClass">
                 <div v-for="section in sections" :key="section.heading" class="max-w-xs">
                     <h3 class="mb-6 text-sm text-center font-semibold text-gray-900 uppercase dark:text-white">{{
                         section.heading }}</h3>
