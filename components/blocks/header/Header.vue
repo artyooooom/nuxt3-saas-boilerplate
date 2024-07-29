@@ -1,10 +1,8 @@
 <script lang="ts" setup>
 
-import type LandingHeaderProps from './types';
+import type HeaderProps from './types';
 
-withDefaults(defineProps<LandingHeaderProps>(), {
-    appName: "No App Name Provided"
-});
+const props = defineProps<HeaderProps>()
 
 </script>
 
