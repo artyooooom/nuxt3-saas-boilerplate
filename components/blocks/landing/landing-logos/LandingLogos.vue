@@ -13,7 +13,7 @@ const gridColsClass = computed(() => {
 
 <template>
 
-    <section class="bg-white dark:bg-gray-900">
+    <section>
         <div class="max-w-screen-xl p-8 mx-auto">
             <div class="grid gap-8 text-gray-500 dark:text-gray-400 max-sm:gap-14 max-sm:grid-cols-1"
                 :class="gridColsClass">

@@ -34,7 +34,7 @@ for (let i = 0; i < props.pricingPlans.length; i++) {
     <div class="container space-y-8 py-24 px-8 lg:grid sm:gap-6 xl:gap-10 lg:space-y-0" :class="gridColsClass">
         <!-- Pricing Card -->
         <div v-for="pricingPlan in pricingPlans" :key="pricingPlan.heading"
-            class="flex flex-col max-w-lg w-full p-6 mx-auto text-center text-gray-900 bg-white border border-gray-100 rounded-lg shadow dark:border-gray-600 xl:p-8 dark:bg-gray-800 dark:text-white">
+            class="flex flex-col max-w-lg w-full p-6 mx-auto text-center text-gray-900 border border-gray-100 rounded-lg shadow xl:p-8">
             <h3 class="mb-4 text-2xl font-semibold">{{ pricingPlan.heading }}</h3>
             <p class="font-light text-gray-500 sm:text-lg dark:text-gray-400" v-if="pricingPlan.subheading">{{
                 pricingPlan.subheading }}</p>

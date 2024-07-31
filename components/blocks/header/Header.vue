@@ -11,7 +11,7 @@ const props = defineProps<HeaderProps>()
     <header class="sticky top-0 w-full z-50">
         <a :href="announcement.link" class="block text-center text-white text-sm py-2"
             :class="announcement.backgroundClass" v-if="announcement?.title">{{ announcement.title }}</a>
-        <nav class="bg-white border-gray-200 py-4 dark:bg-gray-900">
+        <nav class="border-gray-200 py-4">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="/" class="flex items-center">
                     <img v-if="appLogo" :src="appLogo" :alt="appName" class="h-6 mr-3 sm:h-9" />

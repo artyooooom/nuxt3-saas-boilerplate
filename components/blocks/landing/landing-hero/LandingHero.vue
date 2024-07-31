@@ -53,7 +53,7 @@ let markedDescription = computed(() => {
 
 <template>
 
-  <section class="bg-white dark:bg-gray-900">
+  <section>
     <div class="max-w-screen-xl px-8 py-8 lg:pt-20 lg:pb-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12"
       :class="{ getCenteredClasses, 'grid': (align === 'left') }">
       <div class="mr-auto place-self-center lg:col-span-7">
