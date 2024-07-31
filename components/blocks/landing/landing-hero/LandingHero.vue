@@ -56,7 +56,7 @@ let markedDescription = computed(() => {
   <section>
     <div class="max-w-screen-xl px-8 py-8 lg:pt-20 lg:pb-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12"
       :class="{ getCenteredClasses, 'grid': (align === 'left') }">
-      <div class="mr-auto place-self-center lg:col-span-7">
+      <div class="mr-auto place-self-center lg:col-span-6">
         <h1
           class="relative max-w-2xl mb-4 text-4xl font-extrabold tracking-tight md:text-5xl md:leading-tight xl:leading-tight xl:text-6xl dark:text-white"
           :class="getCenteredClasses" v-html="markedHeading"></h1>
@@ -110,8 +110,8 @@ let markedDescription = computed(() => {
           </div>
         </div>
       </div>
-      <div class="lg:mt-0 lg:col-span-5 lg:flex" :class="{ 'justify-center': (align === 'center') }">
-        <img class="lg:max-w-3xl w-full rounded" :class="{ 'my-8': (align === 'center') }" :src="image.url"
+      <div class="lg:mt-0 lg:col-span-6 lg:flex" :class="{ 'justify-center': (align === 'center') }">
+        <img class="lg:max-w-3xl w-full rounded object-contain" :class="{ 'my-8': (align === 'center') }" :src="image.url"
           :alt="image.alt">
       </div>
     </div>
