@@ -8,7 +8,7 @@ const props = defineProps<HeaderProps>()
 
 <template>
 
-    <header class="sticky top-0 w-full z-50">
+    <header class="bg-white sticky top-0 w-full z-50">
         <a :href="announcement.link" class="block text-center text-white text-sm py-2"
             :class="announcement.backgroundClass" v-if="announcement?.title">{{ announcement.title }}</a>
         <nav class="border-gray-200 py-4">
