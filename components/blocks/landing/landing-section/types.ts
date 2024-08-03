@@ -1,4 +1,4 @@
-import { type ButtonProps, type ImageProps, type LinkProps, type FeaturesProps } from "@/components/blocks/types";
+import { type ButtonProps, type ImageProps, type LinkProps, type FeatureProps } from "@/components/blocks/types";
 
 export interface LandingSectionProps {
     tagline?: string;
@@ -6,7 +6,7 @@ export interface LandingSectionProps {
     description?: string;
     links?: LinkProps[];
     buttons?: ButtonProps[];
-    secondBlock?: ImageProps | FeaturesProps[];
+    secondBlock?: ImageProps | FeatureProps[];
     filled?: boolean;
     align?: 'left' | 'center' | 'right';
 }

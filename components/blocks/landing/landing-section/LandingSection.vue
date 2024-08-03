@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type LandingSectionProps } from './types';
-import { type ImageProps, type FeaturesProps } from '../../types';
+import { type ImageProps, type FeatureProps } from '../../types';
 import { computed } from 'vue';
 
 const props = withDefaults(defineProps<LandingSectionProps>(), {
@@ -53,7 +53,7 @@ const imageOrderNo = computed(() => {
                 <!-- If secondBlock is not an ImageProps, display it as a div block -->
                 <div v-else class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0"
                     :class="imageOrderNo">
-                    <div v-for="(feature, index) in (secondBlock as FeaturesProps[])" :key="index" class="mb-4 ">
+                    <div v-for="(feature, index) in (secondBlock as FeatureProps[])" :key="index" class="mb-4 ">
                         <div>
                             
                             <svg v-if="!feature.icon" class="w-10 h-10 mb-2 text-primary md:w-12 md:h-12" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"></path></svg>
