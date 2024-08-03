@@ -69,3 +69,9 @@ export type FooterSocialsProps = {
     github?: string | null,
     facebook?: string | null,
 }
+
+export type FeaturesProps = {
+    icon?: string,
+    heading: string,
+    description: string
+}
