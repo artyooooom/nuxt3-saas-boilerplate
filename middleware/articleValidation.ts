@@ -10,6 +10,10 @@ export let articleValidation = defineNuxtRouteMiddleware((to, from) => {
         return article.url === articleId
     })
 
+    useSeoMeta({
+        title: article?.heading,
+    })
+
     if (!event) return abortNavigation()
     if (!article) return setResponseStatus(event, 404)
 
