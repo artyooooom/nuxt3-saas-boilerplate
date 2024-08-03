@@ -55,10 +55,10 @@ let handleFormRender = computed(() => {
     class="container relative h-screen flex-col items-center justify-center grid lg:max-w-none lg:grid-cols-2 lg:px-0">
     <div class="relative hidden h-full flex-col bg-muted p-10 text-white dark:border-r lg:flex">
       <div class="absolute inset-0 bg-primary"
-        :style="{ backgroundImage: `url(${background})`, backgroundSize: 'cover', filter: 'brightness(0.25)' }" />
+        :style="{ backgroundImage: `url(${background})`, backgroundSize: 'cover', filter: 'brightness(0.25)' }"></div>
       <div class="relative z-20 flex items-center text-lg font-medium">
+        <img v-if="appConfig.appLogo" :src="appConfig.appLogo" :alt="appConfig.appName" class="h-6 mr-3 sm:h-9" />
         <a href="/" target="_blank">
-          <img v-if="appConfig.appLogo" :src="appConfig.appLogo" :alt="appConfig.appName" class="h-6 mr-3 sm:h-9" />
           {{ appConfig.appName }}
         </a>
       </div>

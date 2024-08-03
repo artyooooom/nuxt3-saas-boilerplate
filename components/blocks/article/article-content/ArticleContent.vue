@@ -18,7 +18,7 @@ defineProps<ArticleContentProps>()
     </div>
 
     <!-- article cover image -->
-    <div class="w-full h-96" :style="{ backgroundImage: `url(${image.url});`, backgroundSize: 'cover' }"></div>
+    <div class="w-full h-96" :style="{ backgroundImage: `url(${image.url});`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }"></div>
 
     <!-- article content -->
     <slot />

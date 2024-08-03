@@ -41,7 +41,7 @@ const { appName } = useAppConfig()
                 </BreadcrumbItem>
                 <BreadcrumbSeparator />
                 <BreadcrumbItem>
-                    <BreadcrumbPage>What's the purpose of having a blog for your SAAS?</BreadcrumbPage>
+                    <BreadcrumbPage>{{ article.heading }}</BreadcrumbPage>
                 </BreadcrumbItem>
             </BreadcrumbList>
         </Breadcrumb>
