@@ -39,12 +39,12 @@ const imageOrderNo = computed(() => {
                         </div>
                     </div>
                     <div class="space-y-4 sm:flex sm:space-y-0 space-x-4">
-                        <a v-for="(button, i) in buttons" :key="i" :href="button.link?.url">
+                        <NuxtLink v-for="(button, i) in buttons" :key="i" :to="button.link?.url">
                             <Button v-bind="button">
                             <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
                             <span>{{ button.title }}</span>
                             </Button>
-                        </a>
+                        </NuxtLink>
                     </div>
                 </div>
 

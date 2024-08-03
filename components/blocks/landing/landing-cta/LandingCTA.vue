@@ -16,12 +16,12 @@ withDefaults(defineProps<LandingCTAProps>(), {
                 <h2 class="mb-4 text-3xl font-extrabold leading-tight tracking-tight text-gray-900 dark:text-white">{{ heading }}</h2>
                 <p class="mb-6 font-light text-gray-500 dark:text-gray-400 md:text-lg">{{ subheading }}</p>
                 <div class="space-y-4 sm:flex sm:space-y-0 space-x-4 justify-center">
-                    <a v-for="(button, i) in buttons" :key="i" :href="button.link?.url">
+                    <NuxtLink v-for="(button, i) in buttons" :key="i" :to="button.link?.url">
                         <Button v-bind="button">
-                            <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
-                            <span>{{ button.title }}</span>
+                        <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
+                        <span>{{ button.title }}</span>
                         </Button>
-                    </a>
+                    </NuxtLink>
                 </div>
             </div>
         </div>

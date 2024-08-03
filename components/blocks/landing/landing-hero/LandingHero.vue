@@ -63,12 +63,12 @@ let markedDescription = computed(() => {
         <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
           :class="getCenteredClasses" v-html="markedDescription"></p>
         <div class="space-y-4 sm:flex sm:space-y-0 space-x-4" :class="getCenteredClasses">
-          <a v-for="(button, i) in buttons" :key="i" :href="button.link?.url">
+          <NuxtLink v-for="(button, i) in buttons" :key="i" :to="button.link?.url">
             <Button v-bind="button">
               <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
               <span>{{ button.title }}</span>
             </Button>
-          </a>
+          </NuxtLink>
         </div>
         <div class="flex my-6" :class="getCenteredClasses" v-if="alreadyUsing">
           <div class="-space-x-4 avatar-group justy-start mr-2">
