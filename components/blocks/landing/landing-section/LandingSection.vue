@@ -54,7 +54,7 @@ const imageOrderNo = computed(() => {
                     :class="imageOrderNo">
 
                 <!-- If secondBlock is not an ImageProps, display it as a div block -->
-                <div v-else class="space-y-8 md:grid md:grid-cols-2 md:gap-12 md:space-y-0"
+                <div v-else class="space-y-8 md:grid mt-12 md:grid-cols-2 md:gap-12 md:space-y-0"
                     :class="imageOrderNo">
                     <div v-for="(feature, index) in (secondBlock as FeatureProps[])" :key="index" class="mb-4 ">
                         <div>

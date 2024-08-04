@@ -9,8 +9,8 @@ const props = defineProps<HeaderProps>()
 <template>
 
     <header class="bg-white sticky top-0 w-full z-50">
-        <a :href="announcement.link" class="block text-center text-white text-sm py-2"
-            :class="announcement.backgroundClass" v-if="announcement?.title">{{ announcement.title }}</a>
+        <NuxtLink :to="announcement.link" class="block text-center text-white text-sm py-2"
+            :class="announcement.backgroundClass" v-if="announcement?.title">{{ announcement.title }}</NuxtLink>
         <nav class="border-gray-200 py-4">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
                 <a href="/" class="flex items-center">

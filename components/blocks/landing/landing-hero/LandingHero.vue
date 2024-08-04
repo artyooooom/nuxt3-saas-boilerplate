@@ -54,7 +54,7 @@ let markedDescription = computed(() => {
 <template>
 
   <section>
-    <div class="max-w-screen-xl px-8 py-8 lg:pt-20 lg:pb-8 mx-auto lg:gap-8 xl:gap-0 lg:grid-cols-12"
+    <div class="max-w-screen-xl gap-12 px-8 py-8 lg:pt-20 lg:pb-8 mx-auto xl:gap-0 lg:grid-cols-12"
       :class="{ getCenteredClasses, 'grid': (align === 'left') }">
       <div class="mr-auto place-self-center lg:col-span-6">
         <h1
@@ -72,7 +72,7 @@ let markedDescription = computed(() => {
         </div>
         <div class="flex my-6" :class="getCenteredClasses" v-if="alreadyUsing">
           <div class="-space-x-4 avatar-group justy-start mr-2">
-            <div class="avatar w-10 h-10" v-for="(image, i) in alreadyUsing.images" :key="i">
+            <div class="avatar w-10 h-10" style="border-color: hsl(var(--background))" v-for="(image, i) in alreadyUsing.images" :key="i">
               <img :alt="image.alt" fetchpriority="high" width="400" height="400" decoding="async" data-nimg="1"
                 style="color:transparent" :src="image.url">
             </div>

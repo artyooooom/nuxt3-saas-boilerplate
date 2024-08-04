@@ -126,7 +126,7 @@ const onSubmit = form.handleSubmit(async (values) => {
               Accept terms and conditions
             </label>
             <p class="text-xs text-muted-foreground">
-              You agree to our Terms of Service and Privacy Policy.
+              You agree to our <a href="/termsconditions" class="hover:underline" target="_blank">Terms of Service</a> and <a href="/privacy-policy" class="hover:underline" target="_blank">Privacy Policy</a>.
             </p>
           </div>
         </div>
