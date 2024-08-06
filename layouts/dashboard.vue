@@ -4,7 +4,7 @@ import SidebarNav from '@/components/blocks/dashboard/DashboardSidebarNav.vue'
 import Header from '@/components/blocks/header/Header.vue';
 import Footer from '@/components/blocks/footer/Footer.vue';
 import { linksData, buttonsData } from '@/data/header'
-import { footerSections, socials } from '@/data/footer'
+import { footerSections, subheading, socials } from '@/data/footer'
 import { sidebarNavItems } from '@/data/dashboard-sidenav'
 
 const appConfig = useAppConfig()
@@ -33,7 +33,7 @@ const appConfig = useAppConfig()
         </div>
     </div>
     <Footer v-bind="appConfig" :sections="footerSections"
-        subheading="© 2021-2022 Landwind™. All Rights Reserved. Built with Flowbite and Tailwind CSS."
+        :subheading="subheading"
         :socials="socials" />
 
     <div v-if="appConfig.supportChat.isEnabled" v-html="appConfig.supportChat.embed"></div>
