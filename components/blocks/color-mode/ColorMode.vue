@@ -5,7 +5,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 
 const colorMode = useColorMode()
 
-colorMode.preference = 'dark'
+if (!localStorage.getItem('colorMode')) {
+  colorMode.preference = 'dark'
+}
 </script>
 
 <template>
