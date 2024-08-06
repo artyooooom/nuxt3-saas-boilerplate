@@ -11,5 +11,5 @@ export default interface HeaderProps {
         backgroundClass?: string
         link?: string
     };
-    showColorModeSwitch: boolean;
+    showColorModeSwitch?: boolean;
 }
