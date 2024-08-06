@@ -4,13 +4,13 @@ import { ref } from 'vue'
 import UserPreform from '@/components/forms/UserPreform.vue'
 import UserAuthForm from '@/components/forms/UserAuthForm.vue'
 import UserCreationForm from '@/components/forms/UserCreationForm.vue'
-import { auth } from '@/middleware/auth'
+import { isAuthorized } from '@/middleware/isAuthorized'
 
 const appConfig = useAppConfig()
 
 definePageMeta({
   layout: false,
-  middleware: [auth]
+  middleware: [isAuthorized]
 })
 
 // _**: define the background image on auth page OR remove it
