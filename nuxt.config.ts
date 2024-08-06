@@ -21,7 +21,8 @@ export default defineNuxtConfig({
     "nuxt-icon",
     "@nuxtjs/supabase",
     "@nuxtjs/seo",
-    "nuxt-vercel-analytics"
+    "nuxt-vercel-analytics",
+    '@pinia/nuxt',
   ],
   supabase: { redirect: false },
   

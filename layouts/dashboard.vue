@@ -4,6 +4,7 @@ import SidebarNav from '@/components/blocks/dashboard/DashboardSidebarNav.vue'
 import Header from '@/components/blocks/header/Header.vue';
 import Footer from '@/components/blocks/footer/Footer.vue';
 import { type ButtonProps, type FooterSocialsProps, type LinkProps } from '@/components/blocks/types';
+import { useUserStore } from "@/store/UserStore";
 
 
 const appConfig = useAppConfig()
@@ -43,6 +44,11 @@ const socials: FooterSocialsProps = {
     github: 'https://github.com/artjHom00',
     linkedin: null,
 }
+
+let userStore = useUserStore()
+
+// if user is empty - retrieve it's data
+if(Object.keys(userStore.userData.lemonsqueezy).length === 0 || Object.keys(userStore.userData.supabase).length === 0) await userStore.retrieveUserData()
 
 </script>
 

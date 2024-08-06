@@ -1,7 +1,6 @@
 <script setup lang="ts">
-
-
-import { isAuthorized } from '~/middleware/isAuthorized'
+import { isAuthorized } from '@/middleware/isAuthorized'
+import { useUserStore } from '@/store/UserStore';
 
 definePageMeta({
     layout: 'dashboard',
@@ -9,15 +8,15 @@ definePageMeta({
     middleware: [isAuthorized]
 })
 
-const $store = useNuxtApp()
+const userStore: any = useUserStore()
 
-const userData: any = $store.$userData;
+const user = userStore.userData
 
 </script>
 
 <template>
 
-    <div v-if="userData.supabase.subscription" class="">
+    <div v-if="user.supabase.subscription" class="">
         <!-- _*: add the contents for your user's index dashboard page  -->
     </div>
     <div v-else>
@@ -26,5 +25,5 @@ const userData: any = $store.$userData;
             <Button variant="outline">Go to home page</Button>
         </NuxtLink>
     </div>
-    
+
 </template>

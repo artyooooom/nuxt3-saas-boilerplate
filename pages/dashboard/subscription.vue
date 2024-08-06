@@ -1,6 +1,8 @@
 <script setup lang="ts">
 
-import { isAuthorized } from '~/middleware/isAuthorized'
+import { isAuthorized } from '@/middleware/isAuthorized'
+import { useUserStore } from '@/store/UserStore';
+
 
 definePageMeta({
   layout: 'dashboard',
@@ -8,16 +10,14 @@ definePageMeta({
   middleware: [isAuthorized]
 })
 
-const $store = useNuxtApp()
+const userStore: any = useUserStore()
 
-const userData: any = $store.$userData
 
-const { data: productData } = await useFetch('/api/getProductById', {
-  method: 'post',
-  body: {
-    productId: userData.supabase.product_id,
-  }
-})
+// gets product data if it's not retrieved
+if (Object.keys(userStore.productData).length === 0) await userStore.retrieveUsersProductData()
+
+const product = userStore.productData
+const user = userStore.userData
 
 </script>
 
@@ -33,20 +33,20 @@ const { data: productData } = await useFetch('/api/getProductById', {
             </CardTitle>
           </CardHeader>
           <CardContent>
-              <div class="text-2xl font-bold">
-                {{ userData.supabase.subscription ? 'Subscribed' : 'No subscription' }}
-              </div>
-              <p class="text-xs text-muted-foreground" v-if="productData">
-                {{ productData.name }}
-              </p>
-  
+            <div class="text-2xl font-bold">
+              {{ user.supabase.subscription ? 'Subscribed' : 'No subscription' }}
+            </div>
+            <p class="text-xs text-muted-foreground" v-if="product">
+              {{ product.name }}
+            </p>
+
           </CardContent>
         </div>
         <div class="p-6">
-          <span>{{ productData?.price_formatted }}</span>
+          <span>{{ product?.price_formatted }}</span>
         </div>
       </div>
-      
+
     </Card>
   </div>
 
