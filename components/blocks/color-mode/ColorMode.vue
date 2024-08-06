@@ -4,10 +4,6 @@ import { Button } from '@/components/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
 const colorMode = useColorMode()
-
-if (!localStorage.getItem('colorMode')) {
-  colorMode.preference = 'dark'
-}
 </script>
 
 <template>
