@@ -15,14 +15,15 @@ const landingHeroContent: LandingHeroProps = {
         styling: 1
     },
     buttons: [{
-        title: 'Docs',
+        title: 'Documentation',
         link: {
             url: '/docs'
         },
-        variant: 'secondary',
+        size: 'xl',
+        // variant: '',
         icon: {
             name: 'material-symbols:docs-outline',
-            color: 'black',
+            color: 'white',
             size: '18'
         }
     }],

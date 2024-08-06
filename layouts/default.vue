@@ -2,8 +2,7 @@
 
 import Header from '~/components/blocks/header/Header.vue';
 import Footer from '~/components/blocks/footer/Footer.vue';
-import { footerSections, socials, subheading } from '~/data/footer'
-import { type ButtonProps, type LinkProps } from '@/components/blocks/types';
+import { type ButtonProps, type FooterSocialsProps, type LinkProps } from '@/components/blocks/types';
 
 const appConfig = useAppConfig()
 
@@ -23,29 +22,22 @@ let navBarClass = computed(() => {
 })
 
 
-const linksData: LinkProps[] = [{
-    title: 'Features',
-    url: '/'
-},
-{
-    title: 'Help',
-    url: '/'
-}, {
-    title: 'Pricings',
-    url: '/'
-}]
+const linksData: LinkProps[] = []
 
-const buttonsData: ButtonProps[] = [{
-    title: 'Create an account',
-    // variant: 'secondary'
-},{
-    title: 'Sign In',
-    variant: 'ghost'
-}]
+const buttonsData: ButtonProps[] = []
 
-const announcement = {
-    title: '🎉 Announcement Bar Example',
-    backgroundClass: 'bg-red-500'
+const announcement = {}
+
+const footerSections: any[] = []
+
+const subheading = 'developed & shipped by @artjhom'
+
+const socials: FooterSocialsProps = {
+    twitter: 'https://x.com/artjhom',
+    instagram: null,
+    facebook: null,
+    github: 'https://github.com/artjHom00',
+    linkedin: null,
 }
 
 </script>

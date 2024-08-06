@@ -3,8 +3,7 @@
 import SidebarNav from '@/components/blocks/dashboard/DashboardSidebarNav.vue'
 import Header from '@/components/blocks/header/Header.vue';
 import Footer from '@/components/blocks/footer/Footer.vue';
-import { footerSections, subheading, socials } from '@/data/footer'
-import { type ButtonProps, type LinkProps } from '@/components/blocks/types';
+import { type ButtonProps, type FooterSocialsProps, type LinkProps } from '@/components/blocks/types';
 
 
 const appConfig = useAppConfig()
@@ -32,6 +31,18 @@ const linksData: LinkProps[] = []
 const buttonsData: ButtonProps[] = []
 
 const announcement = {}
+
+const footerSections: any[] = []
+
+const subheading = 'developed & shipped by @artjhom'
+
+const socials: FooterSocialsProps = {
+    twitter: 'https://x.com/artjhom',
+    instagram: null,
+    facebook: null,
+    github: 'https://github.com/artjHom00',
+    linkedin: null,
+}
 
 </script>
 

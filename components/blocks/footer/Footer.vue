@@ -14,7 +14,7 @@ const gridColsClass = computed(() => {
 
 <template>
 
-    <footer class="">
+    <footer>
         <div class="max-w-screen-xl container p-4 py-6 mx-auto lg:py-8 md:p-8 lg:p-10">
             <div class="grid grid-cols-1 gap-12 w-fit sm:grid-cols-2 mx-auto" :class="gridColsClass">
                 <div v-for="section in sections" :key="section.heading" class="max-w-xs">
@@ -27,7 +27,7 @@ const gridColsClass = computed(() => {
                     </ul>
                 </div>
             </div>
-            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8">
+            <hr class="my-6 border-gray-200 sm:mx-auto dark:border-white/5 lg:my-8">
             <div class="text-center">
                 <a href="#"
                     class="flex items-center justify-center mb-5 text-2xl font-semibold text-gray-900 dark:text-white">
