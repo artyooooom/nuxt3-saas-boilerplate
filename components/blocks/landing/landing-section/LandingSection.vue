@@ -29,7 +29,7 @@ const imageOrderNo = computed(() => {
                     <p class="text-lg font-medium text-primary">{{ tagline }}</p>
                     <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ heading }}</h2>
                     <p v-if="description" class="mb-8 font-light lg:text-xl dark:text-gray-400">{{ description }}</p>
-                    <div class="py-6 mt-6 space-y-4 border-t border-gray-200 dark:border-gray-700">
+                    <div class="py-6 mt-6 space-y-4 border-t border-gray-200 dark:border-white/5">
                         <div v-for="link in links" :key="link.url">
                         <a :href="link.url" class="inline-flex items-center text-base font-medium text-primary hover:underline dark:text-white">
                             {{ link.title }}
