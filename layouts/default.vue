@@ -2,8 +2,8 @@
 
 import Header from '~/components/blocks/header/Header.vue';
 import Footer from '~/components/blocks/footer/Footer.vue';
-import { linksData, buttonsData, announcement } from '~/data/header'
 import { footerSections, socials, subheading } from '~/data/footer'
+import { type ButtonProps, type LinkProps } from '@/components/blocks/types';
 
 const appConfig = useAppConfig()
 
@@ -21,6 +21,32 @@ onMounted(() => {
 let navBarClass = computed(() => { 
   return scrollPosition.value > 100 ? 'bg-opacity-100 dark:bg-opacity-90' : 'bg-opacity-0 dark:bg-opacity-0'; 
 })
+
+
+const linksData: LinkProps[] = [{
+    title: 'Features',
+    url: '/'
+},
+{
+    title: 'Help',
+    url: '/'
+}, {
+    title: 'Pricings',
+    url: '/'
+}]
+
+const buttonsData: ButtonProps[] = [{
+    title: 'Create an account',
+    // variant: 'secondary'
+},{
+    title: 'Sign In',
+    variant: 'ghost'
+}]
+
+const announcement = {
+    title: '🎉 Announcement Bar Example',
+    backgroundClass: 'bg-red-500'
+}
 
 </script>
 

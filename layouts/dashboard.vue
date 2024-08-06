@@ -6,6 +6,7 @@ import Footer from '@/components/blocks/footer/Footer.vue';
 import { footerSections, subheading, socials } from '@/data/footer'
 import { type ButtonProps, type LinkProps } from '@/components/blocks/types';
 
+
 const appConfig = useAppConfig()
 const route = useRoute()
 
@@ -26,30 +27,11 @@ const sidebarNavItems = [
     }
 ]
 
-export const linksData: LinkProps[] = [{
-    title: 'Features',
-    url: '/'
-},
-{
-    title: 'Help',
-    url: '/'
-}, {
-    title: 'Pricings',
-    url: '/'
-}]
+const linksData: LinkProps[] = []
 
-export const buttonsData: ButtonProps[] = [{
-    title: 'Create an account',
-    // variant: 'secondary'
-},{
-    title: 'Sign In',
-    variant: 'ghost'
-}]
+const buttonsData: ButtonProps[] = []
 
-export const announcement = {
-    title: '🎉 Announcement Bar Example',
-    backgroundClass: 'bg-red-500'
-}
+const announcement = {}
 
 </script>
 
