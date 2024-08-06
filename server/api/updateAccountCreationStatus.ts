@@ -1,5 +1,5 @@
 // api/updateUser.ts
-import User from '../models/users';
+import User from '@/server/models/users';
 
 export default defineEventHandler(async (event) => {
   try {

@@ -1,7 +1,5 @@
-import User from '../models/users'
-import { LemonSqueezy } from "../utils/lemonsqueezy"
-
-const lemonsqueezy = new LemonSqueezy()
+import User from '@/server/models/users'
+import { lemonsqueezy } from "@/server/utils/lemonsqueezy"
 
 export default defineEventHandler(async (event) => {
     try {
@@ -21,25 +19,31 @@ export default defineEventHandler(async (event) => {
 
             const customerEmail = body.data.attributes.user_email
             const customerId = body.data.attributes.customer_id
-            const productId = body.data.attributes.first_order_item.product_id
-
+            
             // else everything's validated and we proccess the webhook
             if (eventName === 'order_created') {
+                const productId = body.data.attributes.first_order_item.product_id
+                const user: any = await User.findOne({ where: { customer_id: `${customerId}` } })
+                
+                if(!user) {
+                    const newUser = await User.create({
+                        user_email: customerEmail,
+                        customer_id: customerId,
+                        product_id: productId,
+                        subscription: 1,
+                    })
+                    return newUser
+                } else {
+                    await User.update({ subscription: 1, product_id: `${productId}` }, { where: { customer_id: `${customerId}` } })
+                }
 
-                const newUser = await User.create({
-                    user_email: customerEmail,
-                    customer_id: customerId,
-                    product_id: productId,
-                    subscription: 1,
-                })
-
-                return newUser
 
             }
 
-            if (eventName === 'subscription_cancelled' || eventName === 'subscription_expired') {
 
-                const user: any = await User.findOne({ where: { customer_id: customerId } })
+            if (eventName === 'subscription_cancelled' || eventName === 'subscription_expired') {
+                const user: any = await User.findOne({ where: { customer_id: `${customerId}` } })
+
                 if (user) {
                     user.subscription = 0
                     await user.save()
@@ -51,6 +55,7 @@ export default defineEventHandler(async (event) => {
 
         }
     } catch (e: any) {
+        console.log("🚀 ~ defineEventHandler ~ e:", e)
         return setResponseStatus(event, 500, e.message)
     }
 })

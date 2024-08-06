@@ -1,6 +1,4 @@
-import { LemonSqueezy } from "@/server/utils/lemonsqueezy"
-
-const lemonsqueezy = new LemonSqueezy()
+import { lemonsqueezy } from "@/server/utils/lemonsqueezy"
 
 export default defineEventHandler(async (event) => {
     try {

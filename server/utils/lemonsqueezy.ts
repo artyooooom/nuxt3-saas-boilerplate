@@ -2,10 +2,12 @@ import {
   getAuthenticatedUser,
   lemonSqueezySetup,
   getProduct,
+  getCustomer
 } from "@lemonsqueezy/lemonsqueezy.js";
+
 import crypto from 'crypto'
 
-export class LemonSqueezy {
+class LemonSqueezy {
   apiKey: string | undefined;
   signingSecret: string;
   storeId: number;
@@ -55,6 +57,23 @@ export class LemonSqueezy {
     }
   }
 
+  async getProduct(productId: string) { 
+    try {
+
+      const { statusCode, error, data } = await getProduct(productId);
+
+      // checking if errors
+      if (error) throw error;
+      // checking if status code is not 2xx
+      if (!(statusCode >= 200 && statusCode <= 299)) throw 'Response to LemonSqueezy failed with status code' + statusCode;
+
+      return data.data.attributes
+
+    } catch (e) {
+      throw e
+    }
+  }
+
   // accepts two params - raw body & header 'X-Signature'
   async signRequest(raw: string, sign: string) {
     try {
@@ -70,8 +89,24 @@ export class LemonSqueezy {
     } catch (e) {
       throw e
     }
+  }
 
+  async getCustomer(customerId: number) {
+    try {
+
+      const { statusCode, error, data } = await getCustomer(customerId);
+      
+      // checking if errors
+      if (error) throw error;
+      // checking if status code is not 2xx
+      if (!(statusCode >= 200 && statusCode <= 299)) throw 'Response to LemonSqueezy failed with status code' + statusCode;
+
+      return data
+
+    } catch (e) {
+      throw e
+    }
   }
 }
 
-
+export const lemonsqueezy = new LemonSqueezy()

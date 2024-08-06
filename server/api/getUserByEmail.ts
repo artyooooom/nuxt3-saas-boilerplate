@@ -1,7 +1,7 @@
-import User from '../models/users'
+import User from '@/server/models/users'
 
 
-// here put the logic to check whether the account is created already or not & update column "is_account_created"
+// here put the logic to check whether the account is created already or not
 export default defineEventHandler(async (event) => {
     try {
         if (event.req.method === 'POST') {
@@ -12,6 +12,7 @@ export default defineEventHandler(async (event) => {
                     user_email: email
                 }
             })
+
             if (!user) return null
 
             return user.dataValues
