@@ -3,14 +3,53 @@
 import SidebarNav from '@/components/blocks/dashboard/DashboardSidebarNav.vue'
 import Header from '@/components/blocks/header/Header.vue';
 import Footer from '@/components/blocks/footer/Footer.vue';
-import { linksData, buttonsData, announcement } from '@/data/dashboard/header'
 import { footerSections, subheading, socials } from '@/data/footer'
-import { sidebarNavItems } from '@/data/dashboard/sidenav'
+import { type ButtonProps, type LinkProps } from '@/components/blocks/types';
 
 const appConfig = useAppConfig()
 const route = useRoute()
 
 const activeTab: any = ref(route.meta.activeTab)
+
+const sidebarNavItems = [
+    {
+        id: 'home',
+        title: 'Home',
+        href: '/dashboard',
+        icon: 'material-symbols:person-outline'
+    },
+    {
+        id: 'subscription',
+        title: 'Subscription',
+        href: '/dashboard/subscription',
+        icon: 'mdi:contactless-payment-circle-outline'
+    }
+]
+
+export const linksData: LinkProps[] = [{
+    title: 'Features',
+    url: '/'
+},
+{
+    title: 'Help',
+    url: '/'
+}, {
+    title: 'Pricings',
+    url: '/'
+}]
+
+export const buttonsData: ButtonProps[] = [{
+    title: 'Create an account',
+    // variant: 'secondary'
+},{
+    title: 'Sign In',
+    variant: 'ghost'
+}]
+
+export const announcement = {
+    title: '🎉 Announcement Bar Example',
+    backgroundClass: 'bg-red-500'
+}
 
 </script>
 
