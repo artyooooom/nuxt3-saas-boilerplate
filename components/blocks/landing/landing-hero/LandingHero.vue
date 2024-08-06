@@ -56,11 +56,19 @@ let markedDescription = computed(() => {
   <section>
     <div class="max-w-screen-xl gap-12 px-8 py-8 lg:pt-20 lg:pb-8 mx-auto xl:gap-0 lg:grid-cols-12"
       :class="{ getCenteredClasses, 'grid': (align === 'left') }">
-      <div class="mr-auto place-self-center lg:col-span-6">
+
+      <div class="mr-auto place-self-center lg:col-span-6" :class="getCenteredClasses">
+        <Badge variant="outline" class="text-sm py-2 mb-4" v-if="badge">
+          <span class="mr-2 text-primary" v-if="badge.tag">
+            <Badge>{{ badge.tag }}</Badge>
+          </span>
+          <span> {{ badge.content }} </span>
+        </Badge>
+
         <h1
           class="relative max-w-2xl mb-4 text-4xl font-extrabold tracking-tight md:text-5xl md:leading-tight xl:leading-tight xl:text-6xl dark:text-white"
           :class="getCenteredClasses" v-html="markedHeading"></h1>
-        <p class="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
+        <p class="max-w-2xl mb-6 font-light text-muted-foreground lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
           :class="getCenteredClasses" v-html="markedDescription"></p>
         <div class="space-y-4 sm:flex sm:space-y-0 space-x-4" :class="getCenteredClasses">
           <NuxtLink v-for="(button, i) in buttons" :key="i" :to="button.link?.url">
@@ -72,7 +80,8 @@ let markedDescription = computed(() => {
         </div>
         <div class="flex my-6" :class="getCenteredClasses" v-if="alreadyUsing">
           <div class="-space-x-4 avatar-group justy-start mr-2">
-            <div class="avatar w-10 h-10" style="border-color: hsl(var(--background))" v-for="(image, i) in alreadyUsing.images" :key="i">
+            <div class="avatar w-10 h-10" style="border-color: hsl(var(--background))"
+              v-for="(image, i) in alreadyUsing.images" :key="i">
               <img :alt="image.alt" fetchpriority="high" width="400" height="400" decoding="async" data-nimg="1"
                 style="color:transparent" :src="image.url">
             </div>
@@ -106,14 +115,30 @@ let markedDescription = computed(() => {
                   clip-rule="evenodd"></path>
               </svg>
             </div>
-            <p class="text-sm font-light opacity-75">{{ alreadyUsing.description }}</p>
+            <p class="text-sm font-light opacity-75 dark:text-gray-400">{{ alreadyUsing.description }}</p>
           </div>
         </div>
       </div>
-      <div class="lg:mt-0 lg:col-span-6 lg:flex" :class="{ 'justify-center': (align === 'center') }">
-        <img class="lg:max-w-3xl w-full rounded object-contain" :class="{ 'my-8': (align === 'center') }" :src="image.url"
-          :alt="image.alt">
+
+      <div class="lg:mt-0 lg:col-span-6 lg:flex" v-if="align === 'left'">
+        <img class="lg:max-w-3xl w-full rounded object-contain" :src="image.url" :alt="image.alt">
       </div>
+      
+      <div class="relative group mt-14" v-else>
+        <!-- gradient shadow -->
+        <div
+          class="absolute top-2 lg:-top-8 left-1/2 transform -translate-x-1/2 w-[90%] mx-auto h-24 lg:h-80 bg-primary/50 rounded-full blur-3xl">
+        </div>
+        <img
+          class="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border"
+          :src="image.url" alt="dashboard using shadcn-vue" />
+
+        <!-- gradient effect img -->
+        <div
+          class="absolute bottom-0 left-0 w-full h-20 md:h-28 bg-gradient-to-b from-background/0 via-background/50 to-background rounded-lg">
+        </div>
+      </div>
+
     </div>
   </section>
 

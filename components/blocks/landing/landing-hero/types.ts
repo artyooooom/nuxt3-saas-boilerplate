@@ -1,6 +1,10 @@
 import { type ButtonProps, type ImageProps } from '@/components/blocks/types';
 
 export interface LandingHeroProps {
+    badge?: {
+        tag?: string,
+        content: string,
+    }
     heading?: {
         title: string;
         styling?: number
