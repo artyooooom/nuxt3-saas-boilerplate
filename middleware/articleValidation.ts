@@ -1,4 +1,4 @@
-import { articles } from '@/data/articles'
+import { articles } from '~/data/articles'
 
 // validation of article url
 export let articleValidation = defineNuxtRouteMiddleware((to, from) => {

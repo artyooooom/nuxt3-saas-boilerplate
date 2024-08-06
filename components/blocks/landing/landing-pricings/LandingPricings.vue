@@ -23,6 +23,7 @@ for (let i = 0; i < props.pricingPlans.length; i++) {
                     external: true
                 })
             }
+            
         })
     }
 }
@@ -34,7 +35,7 @@ for (let i = 0; i < props.pricingPlans.length; i++) {
     <div class="container space-y-8 py-24 px-8 lg:flex justify-center sm:gap-6 xl:gap-10 lg:space-y-0" :class="gridColsClass">
         <!-- Pricing Card -->
         <div v-for="pricingPlan in pricingPlans" :key="pricingPlan.heading"
-            class="flex flex-col max-w-lg w-full p-6 text-gray-900 border-gray-100 border-2 rounded-lg shadow xl:p-8" :class="{'border-primary': pricingPlan.featured === true}">
+            class="flex flex-col max-w-lg w-full p-6 text-gray-900 border-gray-100 border-2 rounded-lg shadow xl:p-8 dark:text-white dark:bg-gradient-to-br dark:from-slate-300/5 dark:to-gray-300/5" :class="{'border-primary': pricingPlan.featured === true}">
             <h3 class="mb-4 text-2xl font-semibold">{{ pricingPlan.heading }}</h3>
             <p class="font-light text-gray-500 sm:text-lg" v-if="pricingPlan.subheading">{{
                 pricingPlan.subheading }}</p>

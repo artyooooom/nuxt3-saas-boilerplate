@@ -7,16 +7,10 @@ import { ToastAction } from '@/components/ui/toast'
 
 
 const { toast } = useToast()
-const route = useRoute()
 const router = useRouter()
 const client = useSupabaseClient()
-const activeTab = route.meta.activeTab
 
 defineProps<DashboardSidebarNavProps>()
-
-let isActive = (id: string) => {
-  return activeTab === id
-}
 
 let logout = async () => {
   try {
@@ -47,11 +41,12 @@ let logout = async () => {
 
   <nav class="flex space-x-2 lg:flex-col lg:space-x-0 lg:space-y-1">
     
-    <Button v-for="item in sidebarNavItems" :key="item.title" as="a" :href="item.href" variant="ghost"
-      class="w-full text-left justify-start" :class="isActive(item.id) ? 'bg-muted hover:bg-muted' : ''">
-      <Icon class="w-6 h-6 mr-2" v-if="item.icon" :name="item.icon" />
-      {{ item.title }}
-    </Button>
+    <NuxtLink v-for="item in sidebarNavItems" :to="item.href" :key="item.title" activeClass="bg-muted hover:bg-muted rounded-sm">
+      <Button variant="ghost" class="w-full text-left justify-start">
+        <Icon class="w-6 h-6 mr-2" v-if="item.icon" :name="item.icon" />
+        {{ item.title }}
+      </Button>
+    </NuxtLink>
 
     <Button as="a" variant="ghost" class="w-full text-left justify-start cursor-pointer" @click="logout">
       <Icon class="w-6 h-6 mr-2" name="material-symbols:logout" />

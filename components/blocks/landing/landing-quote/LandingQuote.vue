@@ -2,7 +2,9 @@
 
 import { type LandingQuoteProps } from './types';
 
-const props = defineProps<LandingQuoteProps>()
+const props = withDefaults(defineProps<LandingQuoteProps>(), {
+    filled: true
+})
 
 
 const shortName = computed(() => {
@@ -29,7 +31,7 @@ const shortName = computed(() => {
 
 <template>
 
-    <section class="bg-gray-50 dark:bg-gray-800">
+    <section :class="{'bg-slate-50 dark:bg-transparent dark:bg-gradient-to-br dark:from-muted-foreground/5 dark:to-background': filled}">
         <div class="max-w-screen-xl py-24 px-8 mx-auto text-center lg:py-24 lg:px-6">
             <figure class="max-w-screen-md mx-auto">
                 <svg class="h-12 mx-auto mb-3 text-gray-400 dark:text-gray-600" viewBox="0 0 24 27" fill="none"
@@ -39,7 +41,7 @@ const shortName = computed(() => {
                         fill="currentColor" />
                 </svg>
                 <blockquote>
-                    <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white">"{{ content }}"</p>
+                    <p class="text-xl font-medium text-gray-900 md:text-2xl dark:text-white" v-html="content"></p>
                 </blockquote>
                 <figcaption class="flex items-center justify-center mt-6 space-x-3">
                     <Avatar class="rounded-full h-10 w-10 bg-white">

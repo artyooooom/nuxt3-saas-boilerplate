@@ -75,7 +75,7 @@ export type FooterSocialsProps = {
     facebook?: string | null,
 }
 
-export type FeatureProps = {
+export type FeaturesProps = {
     icon?: string,
     heading: string,
     description: string

@@ -11,8 +11,12 @@ export default defineNuxtConfig({
       scrollBehaviorType: 'smooth'
     }
   },
+  colorMode: {
+    classSuffix: ''
+  },
   modules: [
     "@nuxtjs/tailwindcss",
+    '@nuxtjs/color-mode',
     "shadcn-nuxt",
     "nuxt-icon",
     "@nuxtjs/supabase",
@@ -20,6 +24,7 @@ export default defineNuxtConfig({
     "nuxt-vercel-analytics"
   ],
   supabase: { redirect: false },
+  
   routeRules: {
     '/': { prerender: true },
     '/blog': { prerender: true },

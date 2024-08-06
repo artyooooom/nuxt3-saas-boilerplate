@@ -38,7 +38,7 @@ const emit = defineEmits<{
 const onSubmit = form.handleSubmit(async (values) => {
   try {
 
-    const responseData = await $fetch('/api/checkIfAccountExists', {
+    const responseData = await $fetch('/api/getUserByEmail', {
       method: 'post',
       body: {
         email: values.email,

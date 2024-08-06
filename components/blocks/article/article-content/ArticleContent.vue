@@ -10,7 +10,7 @@ defineProps<ArticleContentProps>()
 <template>
 
     <!-- article heading -->
-    <h1 class="mx-auto text-5xl text-black font-extrabold leading-none tracking-tight">{{ heading }}</h1>
+    <h1 class="mx-auto text-5xl font-extrabold leading-none tracking-tight">{{ heading }}</h1>
 
     <!-- article author & metadata -->
     <div class="my-6">

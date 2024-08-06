@@ -18,7 +18,7 @@ withDefaults(defineProps<ArticleCardProps>(), {
 
         <div class="py-3 mt-3">
 
-            <h2 class="mx-auto text-2xl mb-3 text-black font-semibold leading-none tracking-tight">{{ heading }}</h2>
+            <h2 class="mx-auto text-2xl mb-3 font-semibold leading-none tracking-tight">{{ heading }}</h2>
 
             <div class="ml-auto text-sm mt-5 line-clamp-4 tracking-wide leading-relaxed font-light" v-if="description"
                 v-html="description"></div>

@@ -21,7 +21,7 @@ const gridColsClass = computed(() => {
                 <a v-for="logo in logos" :key="logo.alt" :href="logo.link" target="_blank"
                     class="flex items-center justify-self-center">
                     <div v-if="logo.type === 'svg'" v-html="logo.data"></div>
-                    <img v-else :src="logo.data" class="max-h-16 saturate-0 hover:saturate-100 duration-150" :alt="logo.alt">
+                    <img v-else :src="logo.data" class="max-h-16 saturate-0 hover:saturate-100 opacity-30 hover:opacity-100 duration-300" :alt="logo.alt">
                 </a>
 
             </div>

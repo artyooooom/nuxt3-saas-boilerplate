@@ -1,29 +1,31 @@
 <script lang="ts" setup>
 
 import type HeaderProps from './types';
+import ColorMode from '@/components/blocks/color-mode/ColorMode.vue';
 
-const props = defineProps<HeaderProps>()
+defineProps<HeaderProps>()
 
 </script>
 
 <template>
 
-    <header class="bg-white sticky top-0 w-full z-50">
+    <header class="sticky top-0 w-full z-50">
         <NuxtLink :to="announcement.link" class="block text-center text-white text-sm py-2"
             :class="announcement.backgroundClass" v-if="announcement?.title">{{ announcement.title }}</NuxtLink>
         <nav class="border-gray-200 py-4">
             <div class="flex flex-wrap items-center justify-between max-w-screen-xl px-4 mx-auto">
-                <a href="/" class="flex items-center">
+                <NuxtLink to="/" class="flex items-center">
                     <img v-if="appLogo" :src="appLogo" :alt="appName" class="h-6 mr-3 sm:h-9" />
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ appName
                         }}</span>
-                </a>
+                </NuxtLink>
                 <div class="flex items-center lg:order-2 space-x-4">
-                    <a v-for="(button, i) in buttons" :key="i"
+                    <NuxtLink v-for="(button, i) in buttons" :key="i"
                         class="block py-2 pr-1 rounded lg:bg-transparent lg:p-0 dark:text-white"
-                        :target="button.link?.target" :href="button.link?.url">
+                        :target="button.link?.target" :to="button.link?.url">
                         <Button v-bind="button">{{ button.title }}</Button>
-                    </a>
+                    </NuxtLink>
+                    <ColorMode/>
                     <!-- <a href="https://themesberg.com/product/tailwind-css/landing-page" class="text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 sm:mr-2 lg:mr-0 dark:bg-purple-600 dark:hover:bg-purple-700 focus:outline-none dark:focus:ring-purple-800">Download</a> -->
                     <button data-collapse-toggle="mobile-menu-2" type="button"
                         class="inline-flex items-center p-2 ml-1 text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -47,7 +49,7 @@ const props = defineProps<HeaderProps>()
 
                         <li v-for="link in links" :key="link.title">
                             <NuxtLink
-                                class="block py-2 px-3 rounded lg:bg-transparent text-sm hover:bg-primary-foreground"
+                                class="block py-2 px-3 rounded lg:bg-transparent text-sm hover:bg-gray-950 hover:dark:bg-gray-50 hover:dark:bg-opacity-5 hover:bg-opacity-5"
                                 :to="link.url">
                                 {{ link.title }}
                             </NuxtLink>
