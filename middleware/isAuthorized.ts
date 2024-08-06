@@ -31,7 +31,6 @@ export let isAuthorized = defineNuxtRouteMiddleware(async (to, from) => {
             return
 
         } catch (e) {
-            console.log("🚀 ~ isAuthorized ~ e:", e)
             if (to.path === '/auth') {
                 return
             }

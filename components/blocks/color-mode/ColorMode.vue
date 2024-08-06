@@ -4,6 +4,8 @@ import { Button } from '@/components/ui/button'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 
 const colorMode = useColorMode()
+
+colorMode.preference = 'dark'
 </script>
 
 <template>
