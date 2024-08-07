@@ -29,7 +29,7 @@ const gridColsClass = computed(() => {
 
         <div class="grid sm:grid-cols-2 gap-4" :class="gridColsClass">
             <div v-for="feature in features" :key="feature.heading">
-                <Card class="h-full mx-auto max-w-md bg-background border-0 shadow-none max-w">
+                <Card class="h-full mx-auto max-w-sm bg-background border-0 shadow-none max-w">
                     <CardHeader class="flex justify-center items-center">
                         <div class="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
                             <Icon :name="feature.icon" class="size-6 text-primary" />

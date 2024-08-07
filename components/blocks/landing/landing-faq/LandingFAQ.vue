@@ -17,7 +17,7 @@ defineProps<LandingFAQProps>()
         </div>
         <Accordion type="single" class="container max-w-3xl w-full mx-auto" collapsible>
             <AccordionItem v-for="item in accordionItems" :key="item.value" :value="item.value">
-                <AccordionTrigger>{{ item.title }}</AccordionTrigger>
+                <AccordionTrigger class="text-left">{{ item.title }}</AccordionTrigger>
                 <AccordionContent class="font-light text-muted-foreground text-lg">
                     {{ item.content }}
                 </AccordionContent>
