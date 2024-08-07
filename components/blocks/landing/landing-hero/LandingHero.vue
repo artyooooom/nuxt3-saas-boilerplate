@@ -70,9 +70,9 @@ let markedDescription = computed(() => {
           :class="getCenteredClasses" v-html="markedHeading"></h1>
         <p class="max-w-2xl mb-6 font-light text-muted-foreground lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
           :class="getCenteredClasses" v-html="markedDescription"></p>
-        <div class="space-y-4 sm:flex sm:space-y-0 space-x-4" :class="getCenteredClasses">
-          <NuxtLink v-for="(button, i) in buttons" :key="i" :to="button.link?.url">
-            <Button v-bind="button">
+        <div class="space-y-4 space-x-0 sm:flex sm:space-y-0 sm:space-x-4" :class="getCenteredClasses">
+          <NuxtLink v-for="(button, i) in buttons" class="block" :key="i" :to="button.link?.url">
+            <Button v-bind="button" class="w-full sm:w-fit">
               <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
               <span>{{ button.title }}</span>
             </Button>
@@ -131,7 +131,7 @@ let markedDescription = computed(() => {
         </div>
         <img
           class="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border"
-          :src="image.url" alt="dashboard using shadcn-vue" />
+          :src="image.url" :alt="image.alt" />
 
         <!-- gradient effect img -->
         <div
