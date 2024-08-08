@@ -23,9 +23,6 @@ const { toast } = useToast()
 
 const form = useForm({
   validationSchema: formSchema,
-  initialValues: {
-    email: 'agasparyan0000@gmail.com',
-  }
 })
 
 const emit = defineEmits<{
