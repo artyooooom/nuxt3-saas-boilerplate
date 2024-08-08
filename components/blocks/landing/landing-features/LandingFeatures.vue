@@ -32,7 +32,8 @@ const gridColsClass = computed(() => {
                 <Card class="h-full mx-auto max-w-sm bg-background border-0 shadow-none max-w">
                     <CardHeader class="flex justify-center items-center">
                         <div class="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
-                            <Icon :name="feature.icon" class="size-6 text-primary" />
+                            <svg v-if="!feature.icon" class="size-6 text-primary" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm14 1a1 1 0 11-2 0 1 1 0 012 0zM2 13a2 2 0 012-2h12a2 2 0 012 2v2a2 2 0 01-2 2H4a2 2 0 01-2-2v-2zm14 1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd"></path></svg>
+                            <Icon v-else :name="feature.icon" class="size-6 text-primary" />
                         </div>
 
                         <CardTitle class="text-2xl font-bold">

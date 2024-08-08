@@ -57,10 +57,10 @@ let handleFormRender = computed(() => {
       <div class="absolute inset-0 bg-primary"
         :style="{ backgroundImage: `url(${background})`, backgroundSize: 'cover', filter: 'brightness(0.25)' }"></div>
       <div class="relative z-20 flex items-center text-lg font-medium">
-        <img v-if="appConfig.appLogo" :src="appConfig.appLogo" :alt="appConfig.appName" class="h-6 mr-3 sm:h-9" />
-        <a href="/" target="_blank">
-          {{ appConfig.appName }}
-        </a>
+        <NuxtLink to="/" class="flex items-center">
+          <img v-if="appConfig.appLogo" :src="appConfig.appLogo" :alt="appConfig.appName" class="h-6 mr-3 sm:h-9" />
+          <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">{{ appConfig.appName }}</span>
+        </NuxtLink>
       </div>
       <div class="relative z-20 mt-auto" v-if="quote">
         <blockquote class="space-y-2">
