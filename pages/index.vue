@@ -1,37 +1,68 @@
 <script setup lang="ts">
+
 import LandingHero from '@/components/blocks/landing/landing-hero/LandingHero.vue';
-import { type LandingHeroProps } from '@/components/blocks/landing/landing-hero/types'; // Ensure you import the interface
+import LandingSection from '@/components/blocks/landing/landing-section/LandingSection.vue';
+import LandingTestimonials from '@/components/blocks/landing/landing-testimonials/LandingTestimonials.vue';
+import LandingQuote from '@/components/blocks/landing/landing-quote/LandingQuote.vue';
+import LandingFAQ from '@/components/blocks/landing/landing-faq/LandingFAQ.vue';
+import LandingCTA from '@/components/blocks/landing/landing-cta/LandingCTA.vue';
+import LandingPricings from '@/components/blocks/landing/landing-pricings/LandingPricings.vue';
+import { type ButtonProps, type TestimonialProps, type PricingPlanProps, type AccordionItemProps } from '@/components/blocks/types';
 
 definePageMeta({
     layout: 'default'
 });
 
-const landingHeroContent: LandingHeroProps = {
-    heading: {
-        title: 'Welcome to your *SAAS boilerplate!*',
+const heroButtons: ButtonProps[] = [{
+    title: 'Documentation',
+    size: 'lg',
+    link: {
+        url: '#pricings'
+    }
+},
+{
+    title: 'Authorization Page',
+    size: 'lg',
+    link: {
+        url: '/auth',
     },
-    description: {
-        title: 'Welcome to the Nuxt 3 boilerplate to *build and deliver* your SaaS or any other web applications in days instead of weeks!',
-        styling: 1
+    variant: 'secondary'
+}, {
+    title: 'Blog',
+    size: 'lg',
+    link: {
+        url: '/blog',
     },
-    buttons: [{
-        title: 'Documentation',
-        link: {
-            url: '/docs'
-        },
-        size: 'xl',
-        // variant: '',
-        icon: {
-            name: 'material-symbols:docs-outline',
-            color: 'white',
-            size: '18'
-        }
-    }],
-    align: 'center' // Add any other necessary default properties to match the interface
+    variant: 'secondary'
+}]
+
+const heroHeading = {
+    title: 'Welcome to your first *NuxtSAAS* app!'
 }
+const heroDescription = {
+    title: 'Go to documentation and start making your first product now! Explore the blocks & their usage examples here (pages/index.vue)'
+}
+
+let heroImage = {
+    url: '/images/github-dark.png'
+}
+
+const CTAButton: ButtonProps[] = [{
+    title: 'Get Started',
+    link: {
+        url: '#pricings'
+    }
+}]
+
 </script>
 
 <template>
-        <!-- _*: add the contents for your landing page -->
-    <LandingHero v-bind="landingHeroContent" />
+
+    <div>
+
+        <LandingHero :description="heroDescription" :image="heroImage" :heading="heroHeading" :buttons="heroButtons"
+            align="center" />
+
+    </div>
+
 </template>
