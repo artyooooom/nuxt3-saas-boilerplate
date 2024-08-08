@@ -57,8 +57,8 @@ let markedDescription = computed(() => {
     <div class="max-w-screen-xl gap-12 px-8 py-8 lg:pt-20 lg:pb-8 mx-auto xl:gap-0 lg:grid-cols-12"
       :class="{ getCenteredClasses, 'grid': (align === 'left') }">
 
-      <div class="mr-auto place-self-center lg:col-span-6" :class="getCenteredClasses">
-        <Badge variant="outline" class="text-sm py-2 mb-4" v-if="badge">
+      <div class="mx-auto text-center lg:text-left lg:mr-auto place-self-center lg:col-span-6" :class="getCenteredClasses">
+        <Badge variant="outline" :class="{'mx-auto block w-fit': (align === 'center') }" class="text-sm py-2 mb-4" v-if="badge">
           <span class="mr-2 text-primary" v-if="badge.tag">
             <Badge>{{ badge.tag }}</Badge>
           </span>
@@ -70,7 +70,7 @@ let markedDescription = computed(() => {
           :class="getCenteredClasses" v-html="markedHeading"></h1>
         <p class="max-w-2xl mb-6 font-light text-muted-foreground lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400"
           :class="getCenteredClasses" v-html="markedDescription"></p>
-        <div class="space-y-4 space-x-0 sm:flex sm:space-y-0 sm:space-x-4" :class="getCenteredClasses">
+        <div class="space-y-4 space-x-0 lg:flex lg:space-y-0 lg:space-x-4" :class="getCenteredClasses">
           <NuxtLink v-for="(button, i) in buttons" class="block" :key="i" :to="button.link?.url">
             <Button v-bind="button" class="w-full sm:w-fit">
               <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
@@ -131,7 +131,7 @@ let markedDescription = computed(() => {
         </div>
         <img
           class="w-full md:w-[1200px] mx-auto rounded-lg relative rouded-lg leading-none flex items-center border"
-          :src="image.url" :alt="image.alt" />
+          :src="image.url" alt="dashboard using shadcn-vue" />
 
         <!-- gradient effect img -->
         <div

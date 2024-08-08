@@ -29,7 +29,7 @@ const imageOrderNo = computed(() => {
                     <p class="text-lg font-medium text-primary">{{ tagline }}</p>
                     <h2 class="mb-4 text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">{{ heading }}</h2>
                     <p v-if="description" class="mb-8 font-light lg:text-xl dark:text-gray-400">{{ description }}</p>
-                    <div class="py-6 mt-6 space-y-4 border-t border-gray-200 dark:border-white/5">
+                    <div class="py-6 mt-6 space-y-4 border-t border-gray-200 dark:border-white/20">
                         <div v-for="link in links" :key="link.url">
                         <a :href="link.url" class="inline-flex items-center text-base font-medium text-primary hover:underline dark:text-white">
                             {{ link.title }}
@@ -40,7 +40,7 @@ const imageOrderNo = computed(() => {
                     </div>
                     <div class="space-y-4 sm:flex sm:space-y-0 space-x-4">
                         <NuxtLink v-for="(button, i) in buttons" :key="i" :to="button.link?.url">
-                            <Button v-bind="button">
+                            <Button v-bind="button" class="w-full sm:w-fit">
                             <Icon v-if="button.icon" class="mr-2" v-bind="button.icon" />
                             <span>{{ button.title }}</span>
                             </Button>
@@ -54,7 +54,7 @@ const imageOrderNo = computed(() => {
                     :class="imageOrderNo">
 
                 <!-- If secondBlock is not an ImageProps, display it as a div block -->
-                <div v-else class="space-y-8 md:grid mt-12 md:grid-cols-2 md:gap-12 md:space-y-0"
+                <div v-else class="text-center sm:text-left space-y-8 md:grid mt-12 md:grid-cols-2 md:gap-12 md:space-y-0"
                     :class="imageOrderNo">
                     <div v-for="(feature, index) in (secondBlock as FeaturesProps[])" :key="index" class="mb-4 ">
                         <div>
