@@ -42,7 +42,7 @@ const user = userStore.userData
 
           </CardContent>
         </div>
-        <div class="p-6">
+        <div class="p-6" v-if="user.supabase.subscription">
           <span>{{ product?.price_formatted }}</span>
         </div>
       </div>
