@@ -1,29 +1,39 @@
 import User from '@/server/models/users'
-import { lemonsqueezy } from "@/server/utils/lemonsqueezy"
+import { stripe } from "@/server/utils/stripe"
 
 export default defineEventHandler(async (event) => {
     try {
+
         if (event.req.method === 'POST') {
             const body = await readBody(event)
             const rawBody = await readRawBody(event)
             const headers = await getRequestHeaders(event)
 
-            const eventName = headers['x-event-name']
-            const sign = headers['x-signature']
+            const eventType = body.type
+            const sign = headers['stripe-signature']
 
             // if there's no body of request / no signature / no event name provided - throw an error
-            if (!rawBody || !sign || !eventName) throw new Error('One of required parameters is missing')
+            if (!rawBody || !sign || !eventType) throw new Error('One of required parameters is missing')
 
             // if the signature of request is not validated -  throw an error
-            if (!(await lemonsqueezy.signRequest(rawBody, sign))) throw new Error('Request was not validated')
+            if (!(await stripe.signRequest(rawBody, sign))) throw new Error('Request was not validated')
 
-            const customerEmail = body.data.attributes.user_email
-            const customerId = body.data.attributes.customer_id
-            
+            const customerId = body.data.object.customer
+            const customerEmail = body.data.object.customer_details?.email || body.data.object.customer_email
+
             // else everything's validated and we proccess the webhook
-            if (eventName === 'order_created') {
-                const productId = body.data.attributes.first_order_item.product_id
-                const user: any = await User.findOne({ where: { customer_id: `${customerId}` } })
+            if (eventType === 'checkout.session.completed' || eventType === 'invoice.paid') {
+                
+                let productId;
+                
+                if(eventType === 'checkout.session.completed') {
+                    productId = await stripe.getProductIdOfPaymentLink(body.data.object.payment_link)
+                } else {
+                    productId = body.data.object.lines.data[0].price.product
+                }
+
+
+                const user: any = await User.findOne({ where: { user_email: `${customerEmail}` } })
                 
                 if(!user) {
                     const newUser = await User.create({
@@ -34,14 +44,13 @@ export default defineEventHandler(async (event) => {
                     })
                     return newUser
                 } else {
-                    await User.update({ subscription: 1, product_id: `${productId}` }, { where: { customer_id: `${customerId}` } })
+                    await User.update({ subscription: 1, product_id: `${productId}` }, { where: { user_email: `${customerEmail}` } })
                 }
-
 
             }
 
 
-            if (eventName === 'subscription_cancelled' || eventName === 'subscription_expired') {
+            if (eventType === 'invoice.payment_failed' || eventType === 'customer.subscription.deleted') {
                 const user: any = await User.findOne({ where: { customer_id: `${customerId}` } })
 
                 if (user) {

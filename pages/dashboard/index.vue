@@ -1,4 +1,5 @@
 <script setup lang="ts">
+
 import { isAuthorized } from '@/middleware/isAuthorized'
 import { useUserStore } from '@/store/UserStore';
 
@@ -16,7 +17,7 @@ const user = userStore.userData
 
 <template>
 
-    <div v-if="user.supabase.subscription" class="">
+    <div v-if="user.supabase.subscription">
         <!-- _*: add the contents for your user's index dashboard page  -->
     </div>
     <div v-else>

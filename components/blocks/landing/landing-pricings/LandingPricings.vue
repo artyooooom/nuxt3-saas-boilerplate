@@ -14,9 +14,9 @@ for (let i = 0; i < props.pricingPlans.length; i++) {
 
     // if there is no custom action event - set the default one
     // buy link generation and redirecting to checkout on click
-    if (!pricingPlan.action.event && pricingPlan.lemonsqueezyId) {
+    if (!pricingPlan.action.event && pricingPlan.paymentLink) {
         pricingPlan.action.event = (async () => {
-            const url = await $fetch('/api/getProductBuyLink/' + pricingPlan.lemonsqueezyId)
+            const url = pricingPlan.paymentLink
 
             if (url) {
                 navigateTo(url, {

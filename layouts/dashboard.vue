@@ -48,7 +48,7 @@ const socials: FooterSocialsProps = {
 let userStore = useUserStore()
 
 // if user is empty - retrieve it's data
-if(Object.keys(userStore.userData.lemonsqueezy).length === 0 || Object.keys(userStore.userData.supabase).length === 0) await userStore.retrieveUserData()
+if(Object.keys(userStore.userData.stripe).length === 0 || Object.keys(userStore.userData.supabase).length === 0) await userStore.retrieveUserData()
 
 </script>
 

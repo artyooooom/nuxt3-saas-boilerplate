@@ -54,6 +54,33 @@ const CTAButton: ButtonProps[] = [{
     }
 }]
 
+const pricingPlans: PricingPlanProps[] = [
+    {
+        heading:"Starter Package",
+        pricing: {
+            actual: "$39",
+        },
+        features: ['Example'],
+        period:"Lifetime",
+        paymentLink:"https://buy.stripe.com/test_7sI01YdJDbla3qU144",
+        action: {
+            title: 'Get Started'
+        }
+    },
+    {
+        heading:"Starter Package [Subscription]",
+        pricing: {
+            actual: "$39",
+        },
+        features: ['Example'],
+        period:"day",
+        paymentLink:"https://buy.stripe.com/test_dR62a620Vah6aTmbIJ",
+        action: {
+            title: 'Get Started'
+        }
+    },
+]
+
 </script>
 
 <template>
@@ -62,6 +89,8 @@ const CTAButton: ButtonProps[] = [{
 
         <LandingHero :description="heroDescription" :image="heroImage" :heading="heroHeading" :buttons="heroButtons"
             align="center" />
+
+        <LandingPricings :pricing-plans="pricingPlans"/>  
 
     </div>
 

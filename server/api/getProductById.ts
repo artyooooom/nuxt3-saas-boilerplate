@@ -1,4 +1,4 @@
-import { lemonsqueezy } from "@/server/utils/lemonsqueezy"
+import { stripe } from "@/server/utils/stripe"
 
 // here put the logic to check whether the account is created already or not
 export default defineEventHandler(async (event) => {
@@ -6,8 +6,7 @@ export default defineEventHandler(async (event) => {
         if (event.req.method === 'POST') {
             const { productId } = await readBody(event)
 
-            let product = await lemonsqueezy.getProduct(productId)
-            
+            let product = await stripe.getProduct(productId)
             return product
 
         }

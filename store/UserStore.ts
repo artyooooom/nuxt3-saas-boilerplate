@@ -2,14 +2,14 @@ import { defineStore } from 'pinia';
 
 export const useUserStore = defineStore('UserStore', {
     state: () => ({
-        lemonsqueezy: {} as any,
+        stripe: {} as any,
         supabase: {} as any,
         product: {} as any
     }),
     getters: {
         userData: (state) => {
             return {
-                lemonsqueezy: state.lemonsqueezy,
+                stripe: state.stripe,
                 supabase: state.supabase
             }
         },
@@ -23,36 +23,36 @@ export const useUserStore = defineStore('UserStore', {
 
                 const user = useSupabaseUser()
 
-                if(user.value) {
+                if (user.value) {
                     const userData = await $fetch('/api/getUserByEmail', {
                         method: 'post',
                         body: {
                             email: user.value.email,
                         }
                     })
-                        
-                    const { data: customerData } = await $fetch('/api/getCustomerById', {
+
+                    const customerData = await $fetch('/api/getCustomerById', {
                         method: 'post',
                         body: {
                             customer_id: userData.customer_id
                         }
                     })
-                    
-                    this.lemonsqueezy = customerData
+
+                    this.stripe = customerData
                     this.supabase = { ...user.value, ...userData }
-        
+
                     return true;
                 }
-            } catch(e) {
+            } catch (e) {
                 throw e
             }
         },
         async retrieveUsersProductData() {
             try {
 
-                if(!this.supabase.product_id) return false
-                
-                const { data: productData } = await useFetch('/api/getProductById', {
+                if (!this.supabase.product_id) return false
+
+                const productData = await $fetch('/api/getProductById', {
                     method: 'post',
                     body: {
                         productId: this.supabase.product_id,
@@ -63,7 +63,7 @@ export const useUserStore = defineStore('UserStore', {
 
                 return true
 
-            } catch(e) {
+            } catch (e) {
                 console.log("🚀 ~ retrieveUsersProductData ~ e:", e)
                 throw e
             }
