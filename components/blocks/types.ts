@@ -46,7 +46,7 @@ export type PricingPlanProps = {
         title: string,
         event?: any
     },
-    paymentLink?: string // imported from lemonsqueezy
+    paymentLink?: string // imported from Stripe
 }
 
 export type LinkProps = {

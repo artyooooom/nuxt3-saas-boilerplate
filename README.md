@@ -13,7 +13,7 @@ Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all
 
 - [shadcn](https://www.shadcn-vue.com/) - elegant nuxt 3 components/icons using Tailwind.
 
-- [Lemonsqueezy](https://lemonsqueezy.com) - for payments.
+- [Stripe](https://stripe.com) - for payments.
 
 - [Supabase](https://supabase.com/) - for auth, storage, database and realtime needs.
 
@@ -26,7 +26,7 @@ Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all
 ## Features
 
 - Authentication & creation of users
-- Payments via lemonsqueezy (subscriptions plans available)
+- Payments via Stripe (subscriptions plans available)
 - Ready-to-use blocks for easy landing page set up
 - Ready-to-use blog system
 - Ready layouts & template pages - auth, user's dashboard (with middlewares)
@@ -36,7 +36,7 @@ Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all
 Below are some additional setup tasks that are not directly related to code:
 
 - **Supabase:** Follow the instructions to set up Supabase, an essential part of this solution for Auth and DB management
-- **Lemonsqueezy:** Lemonsqueezy is used for the payments. You will need to set up your Lemonsqueezy account first & create products
+- **Stripe:** Stripe is used for the payments. You will need to set up your Stripe account first & create products
 
 - After setting up the services, create a .env file from the .env.example file with all required data
 
