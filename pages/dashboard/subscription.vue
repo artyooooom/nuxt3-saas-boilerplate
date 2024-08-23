@@ -15,8 +15,10 @@ const userStore: any = useUserStore()
 
 // gets product data if it's not retrieved
 if (Object.keys(userStore.productData).length === 0) await userStore.retrieveUsersProductData()
+if (Object.keys(userStore.priceData).length === 0) await userStore.retrieveUsersPriceData()
 
 const product = userStore.productData
+const price = userStore.priceData
 const user = userStore.userData
 
 </script>
@@ -37,7 +39,7 @@ const user = userStore.userData
               {{ user.supabase.subscription ? 'Subscribed' : 'No subscription' }}
             </div>
             <p class="text-xs text-muted-foreground" v-if="product">
-              {{ product.name }}
+              {{ `${product.name} ${price.nickname}` }}
             </p>
 
           </CardContent>
