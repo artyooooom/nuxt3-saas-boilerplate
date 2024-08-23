@@ -24,12 +24,13 @@ export default defineEventHandler(async (event) => {
             // else everything's validated and we proccess the webhook
             if (eventType === 'checkout.session.completed' || eventType === 'invoice.paid') {
                 
-                let productId;
+                var productId, priceId;
                 
                 if(eventType === 'checkout.session.completed') {
-                    productId = await stripe.getProductIdOfPaymentLink(body.data.object.payment_link)
+                    var { productId, priceId } = await stripe.getProductDetailsFromPaymentLink(body.data.object.payment_link)
                 } else {
                     productId = body.data.object.lines.data[0].price.product
+                    priceId = body.data.object.lines.data[0].price.id
                 }
 
 
@@ -40,6 +41,7 @@ export default defineEventHandler(async (event) => {
                         user_email: customerEmail,
                         customer_id: customerId,
                         product_id: productId,
+                        price_id: priceId,
                         subscription: 1,
                     })
                     return newUser

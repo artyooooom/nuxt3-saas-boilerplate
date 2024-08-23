@@ -4,7 +4,8 @@ export const useUserStore = defineStore('UserStore', {
     state: () => ({
         stripe: {} as any,
         supabase: {} as any,
-        product: {} as any
+        product: {} as any,
+        price: {} as any,
     }),
     getters: {
         userData: (state) => {
@@ -15,6 +16,9 @@ export const useUserStore = defineStore('UserStore', {
         },
         productData: (state) => {
             return state.product
+        },
+        priceData: (state) => {
+            return state.price
         }
     },
     actions: {
@@ -65,6 +69,27 @@ export const useUserStore = defineStore('UserStore', {
 
             } catch (e) {
                 console.log("🚀 ~ retrieveUsersProductData ~ e:", e)
+                throw e
+            }
+        },
+        async retrieveUsersPriceData() {
+            try {
+
+                if (!this.supabase.price_id) return false
+
+                const priceData = await $fetch('/api/getPriceById', {
+                    method: 'post',
+                    body: {
+                        priceId: this.supabase.price_id,
+                    }
+                })
+
+                this.price = priceData
+
+                return true
+
+            } catch (e) {
+                console.log("🚀 ~ retrieveUsersPriceData ~ e:", e)
                 throw e
             }
         }

@@ -42,6 +42,19 @@ class StripeProvider {
     }
   }
 
+  async getPrice(priceId: string) {
+    try {
+
+
+      const price = await this.stripe.prices.retrieve(priceId);
+
+      return price
+
+    } catch (e) {
+      throw e
+    }
+  }
+
   // accepts two params - raw body & header 'X-Signature'
   async signRequest(raw: string, sign: string) {
     try {
@@ -111,6 +124,7 @@ class StripeProvider {
 
       }
       
+      console.log('Payment links `customer_creation` updated!')
       return true
 
     } catch (e) {
@@ -118,12 +132,15 @@ class StripeProvider {
     }
   }
 
-  async getProductIdOfPaymentLink(paymentLink: string) {
+  async getProductDetailsFromPaymentLink(paymentLink: string) {
     try {
 
       const lineItems = await this.stripe.paymentLinks.listLineItems(paymentLink);
       
-      return lineItems.data[0].price.product
+      return {
+        productId: lineItems.data[0].price.product,
+        priceId: lineItems.data[0].price.id,
+      }
 
     } catch (e) {
       throw e

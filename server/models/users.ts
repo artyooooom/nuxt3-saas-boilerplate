@@ -18,6 +18,10 @@ const User = sequelize.define('users_data', {
     type: DataTypes.STRING,
     allowNull: false,
   },
+  price_id: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
   subscription: {
     type: DataTypes.BOOLEAN,
     allowNull: false,
