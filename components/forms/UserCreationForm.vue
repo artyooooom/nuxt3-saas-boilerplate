@@ -100,7 +100,7 @@ const onSubmit = form.handleSubmit(async (values) => {
       <FormItem class="mb-3">
         <FormLabel>Password</FormLabel>
         <FormControl>
-          <Input type="text" placeholder="Password" v-bind="componentField" autocomplete="off" />
+          <Input type="password" placeholder="Password" v-bind="componentField" autocomplete="off" />
         </FormControl>
         <FormMessage />
       </FormItem>
@@ -109,7 +109,7 @@ const onSubmit = form.handleSubmit(async (values) => {
       <FormItem class="mb-3">
         <FormLabel>Repeat password</FormLabel>
         <FormControl>
-          <Input type="text" placeholder="Repeat password" v-bind="componentField" autocomplete="off" />
+          <Input type="password" placeholder="Repeat password" v-bind="componentField" autocomplete="off" />
         </FormControl>
         <FormMessage />
       </FormItem>
