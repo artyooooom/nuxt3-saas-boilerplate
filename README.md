@@ -1,70 +1,61 @@
-# Nuxt 3 SAAS Boilerplate 
+# Nuxt 3 SaaS Boilerplate (Learning Project)
 
-Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all you need to build your SaaS or any other web app. Create & deliver your SaaS in a matter of days, not weeks!
+> ⚠️ **Not maintained / learning repo.**  
+> This boilerplate was built as a *test product* to learn how to ship SaaS-style apps and to get hands-on experience with **Nuxt 3** + **Supabase** (and payments).  
+> Some functionality may be incomplete or broken, and dependencies/config may be outdated.
 
-[📎 See Demo](https://nuxt3-saas-boilerplate.vercel.app/) \
-[📄 Documentation](https://nuxtsaas-docs.vercel.app/)
+A Nuxt 3 starter kit with common SaaS building blocks: auth, subscriptions, landing sections, and a simple blog — designed to be easy to customize and quick to deploy.
 
-## Stack
+- 📎 Demo: https://nuxt3-saas-boilerplate.vercel.app/  
+- 📄 Docs: https://nuxtsaas-docs.vercel.app/
 
-- [Nuxt 3](https://nuxt.com/) - SSR, ESR, File-based routing, components auto importing, modules, layouts etc.
+---
 
-- [Tailwind CSS](https://tailwindcss.com) - The gold standard CSS utility framework
+## Tech Stack
 
-- [shadcn](https://www.shadcn-vue.com/) - elegant nuxt 3 components/icons using Tailwind.
+- **Nuxt 3** — SSR, file-based routing, layouts, auto-imports
+- **Tailwind CSS** — utility-first styling
+- **shadcn-vue** — UI components/icons
+- **Stripe** — subscription payments
+- **Supabase** — auth, database, storage, realtime
+- `<script setup>` syntax
+- SEO-focused structure
+- Validation with **Zod**, forms with **vee-validate**
 
-- [Stripe](https://stripe.com) - for payments.
+---
 
-- [Supabase](https://supabase.com/) - for auth, storage, database and realtime needs.
+## What’s Included
 
-- The `<script setup>` syntax.
+- User authentication + user creation
+- Stripe subscriptions (plans supported)
+- Landing page blocks/sections ready to reuse
+- Basic blog system
+- Ready layouts/pages: auth, dashboard, middleware-protected routes
 
-- SEO Optimized.
+---
 
-- Data validation, incoming data validated with [Zod](https://zod.dev/), forms with [vee-validate](https://vee-validate.logaretm.com/v4/).
+## Important Note (Read This)
 
-## Features
+This repository is **not maintained** and was created primarily for learning and experimentation.
 
-- Authentication & creation of users
-- Payments via Stripe (subscriptions plans available)
-- Ready-to-use blocks for easy landing page set up
-- Ready-to-use blog system
-- Ready layouts & template pages - auth, user's dashboard (with middlewares)
+- Expect rough edges (broken flows, outdated configs, missing env vars)
+- Use it as reference / starter ideas, not as a production-ready template
+- PRs/issues might not be reviewed
 
+---
 
-## Initial Setup
-Below are some additional setup tasks that are not directly related to code:
+## Initial Setup (Services)
 
-- **Supabase:** Follow the instructions to set up Supabase, an essential part of this solution for Auth and DB management
-- **Stripe:** Stripe is used for the payments. You will need to set up your Stripe account first & create products
+Before running locally you’ll need:
 
-- After setting up the services, create a .env file from the .env.example file with all required data
+- **Supabase**: create a project and configure Auth + DB
+- **Stripe**: create products/prices for subscriptions
 
+Then create a `.env` from `.env.example` and fill in required values.
 
-## Setup & Configuration
+---
+
+## Install
 
 ```bash
 npm install
-```
-
-To configure the script use a search through contents of all files & set everything up using the comments inside
-- Search for "_*:" - required actions in code
-- Search for "_**:" - additional actions in code
-
-For deployment you can use [Vercel](https://vercel.com/)
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-npm run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-npm run build
-```
