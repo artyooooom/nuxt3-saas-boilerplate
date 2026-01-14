@@ -2,8 +2,8 @@
 
 Easy to customize, SEO-friendly and production-ready Nuxt 3 boilerplate with all you need to build your SaaS or any other web app. Create & deliver your SaaS in a matter of days, not weeks!
 
-[📎 See Demo](/) \
-[📄 Documentation](/)
+[📎 See Demo](https://nuxt3-saas-boilerplate.vercel.app/) \
+[📄 Documentation](https://nuxtsaas-docs.vercel.app/)
 
 ## Stack
 
@@ -68,9 +68,3 @@ Build the application for production:
 ```bash
 npm run build
 ```
-
-----
-
-
-> Fully developed & designed by @artjhom \
-> [![Twitter URL](https://img.shields.io/twitter/url.svg?label=Follow%20artjhom&style=social&url=https%3A%2F%2Ftwitter.com%2Fartjhom)](https://twitter.com/artjhom)
