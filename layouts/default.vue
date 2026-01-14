@@ -45,7 +45,7 @@ const socials: FooterSocialsProps = {
 
     <Header v-bind="appConfig" :links="linksData" :buttons="buttonsData" :announcement="announcement" class="bg-white duration-200 dark:bg-gray-950" :class="navBarClass"/>
     <slot />
-    <Footer v-bind="appConfig" :sections="footerSections" :subheading="subheading" :socials="socials" />
+    <Footer v-bind="appConfig" :sections="footerSections" :socials="socials" />
 
     <div v-if="appConfig.supportChat.isEnabled" v-html="appConfig.supportChat.embed"></div>
 
