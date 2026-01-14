@@ -11,7 +11,7 @@ const heroButtons: ButtonProps[] = [{
     title: 'Documentation',
     size: 'lg',
     link: {
-        url: 'https://docs.nuxtsaas.tech/',
+        url: 'https://nuxtsaas-docs.vercel.app/',
         target: '_blank',
     }
 },
@@ -19,7 +19,7 @@ const heroButtons: ButtonProps[] = [{
     title: 'Authorization Page',
     size: 'lg',
     link: {
-        url: 'https://nuxtsaas.tech/auth',
+        url: '/auth',
         target: '_blank',
     },
     variant: 'secondary'
@@ -27,7 +27,7 @@ const heroButtons: ButtonProps[] = [{
     title: 'Blog',
     size: 'lg',
     link: {
-        url: 'https://nuxtsaas.tech/blog',
+        url: '/blog',
         target: '_blank',
     },
     variant: 'secondary'
