@@ -35,13 +35,10 @@ const announcement = {}
 
 const footerSections: any[] = []
 
-const subheading = 'developed & shipped by @artjhom'
-
 const socials: FooterSocialsProps = {
-    twitter: 'https://x.com/artjhom',
     instagram: null,
     facebook: null,
-    github: 'https://github.com/artjHom00',
+    github: 'https://github.com/artyooooom',
     linkedin: null,
 }
 
